@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.ProductMapper">
+	<select id="getProductList" resultType="ProductDTO">
+		<![CDATA[
+	         SELECT * FROM PRODUCT ORDER BY PID DESC
+     	]]>
+	</select>
+ 	<insert id="productInsert" parameterType="ProductDTO">
+		<![CDATA[
+			INSERT INTO PRODUCT(pID, pNAME, pPRICE, pSTOCK, pIMAGE1, pIMAGE2, pIMAGE3, pDETAIL, pRDATE) 
+			VALUES (#{pid}, #{pname}, #{pprice}, #{pstock}, #{pimage1}, #{pimage2}, #{pimage3}, #{pdetail}, SYSDATE)
+		]]>
+	</insert>
+	<update id="productUpdate" parameterType="ProductDTO">
+		<![CDATA[
+			UPDATE PRODUCT 
+			SET pID=#{pid}, pNAME=#{pname}, pPRICE=#{pprice}, pDISCOUNT=#{pdiscount}, pSTOCK=#{pstock}, pIMAGE1=#{pimage1}, pIMAGE2=#{pimage2}, pIMAGE3=#{pimage3}, pDETAIL=#{pdetail}, pSELL=#{psell}
+			WHERE pID=#{pid}
+		]]>
+	</update>	
+	<delete id="productDelete" parameterType="java.lang.Integer">
+	    <![CDATA[
+	         DELETE PRODUCT WHERE pID=#{id}
+	    ]]>
+    </delete>
+    <select id="getProductSort" resultType="ProductDTO">
+		<![CDATA[
+	         SELECT * FROM PRODUCT 
+	         WHERE pBRAND=#{pbrand}
+	         ORDER BY PID DESC
+     	]]>
+	</select>	
+	<!-- 메뉴별 상품페이지 -->
+	<select id="getBrandsList" resultType="ProductDTO" parameterType="java.lang.String">
+		<![CDATA[
+	         SELECT * FROM PRODUCT WHERE PBRAND = #{pg}
+     	]]>
+	</select>
+	<!-- 상세 페이지 -->
+	<select id="getProductDetail" parameterType="java.lang.Integer" resultType="ProductDTO">
+		<![CDATA[
+			SELECT * FROM PRODUCT WHERE pID=#{pg}
+		]]>
+	</select>	
+</mapper>

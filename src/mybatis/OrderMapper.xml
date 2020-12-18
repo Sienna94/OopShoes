@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.OrderMapper">
+	<select id="getOrderList" resultType="AdminOrderdetailDTO">
+		<![CDATA[
+	        SELECT od.odID, o.mID, p.pNAME, od.odSIZE, od.odQTY
+			FROM ORDERS_DETAIL od, ORDERS o, PRODUCT p
+			WHERE od.oID = o.oID AND od.pID = p.pID
+			ORDER BY od.odID DESC
+     	]]>
+	</select>
+	<select id="getMyOrderList" parameterType="java.lang.String" resultType="AdminOrderdetailDTO">
+		<![CDATA[
+	        SELECT od.odID, o.mID, p.pNAME, od.odSIZE, od.odQTY
+			FROM ORDERS_DETAIL od, ORDERS o, PRODUCT p
+			WHERE od.oID = o.oID AND od.pID = p.pID AND o.mID = #{id}
+			ORDER BY od.odID DESC
+     	]]>
+	</select>
+	<select id="getOrderView" parameterType="java.lang.String" resultType="OrderDTO">
+		<![CDATA[
+	        SELECT *
+			FROM ORDERS
+			WHERE mID = #{mid}
+     	]]>
+	</select>
+</mapper>

@@ -1,0 +1,139 @@
+@charset "EUC-KR";
+
+*{
+	font-family: "Trade Gothic LT W01 Bd CnNo-20", "Apple SD Gothic Neo", "Noto Sans KR", "맑은 고딕", serif, Arial, Helvetica;
+}
+
+/* header 로고,제목 */
+/* header {
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  background-color: #ffe082;
+  top: 0;
+  position: relative;
+} */
+
+/* 장바구니 */
+.basket{
+	width: 40%;
+	margin : auto;
+}
+.cart-title{
+	margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-align:center;
+}
+.cart-num{
+	width: 100%;
+    text-align: center;
+    margin: 0;
+}
+.product-select-all{
+	margin-top :20px;
+	padding: 20px 0px;
+    border-top: 1px solid #e5e5e5;    
+}
+#btn_deleteAll{
+	color: #111;
+	background-color: #fff;
+	border: 0;
+	outline: 0;
+}
+.img-wrap img{
+	display : inline-block;
+	width: 100px;
+	height: 100px;
+}
+.cart-num{
+	font-size: 14px;
+    color: #999;
+}
+.item-cart{
+	font-family: "Noto Sans KR", "Malgun Gothic", "MalgunGothic", Dotum, Helvetica, Arial, sans-serif;
+    color: #111;
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #dedfda;
+    box-sizing: border-box;
+}
+.item-info{
+    border-bottom: 1px solid #dedfda;
+    padding: 20px;
+}
+.img-wrap{
+	display : inline-block;
+}
+.info-wrap{
+	display : inline-block;
+	margin-left: 10px;
+}
+.pName{
+	font-weight: bold;
+}
+.btn-cancel{
+	display: inline-block;
+	float: right;
+}
+
+.product-checkout{
+	display : block;
+	margin-top: 20px;
+}
+.checkout-container{
+	padding-top : 10px;
+	padding-left : 10px;
+	padding-right : 10px;
+	padding-bottom : 10px;
+	border-left: 1px solid #E5E5E5; 
+	border-right: 1px solid #E5E5E5; 
+	border-bottom: 1px solid #E5E5E5; 	
+}
+.info-price{
+	display : block; 
+}
+.item-price{
+	display : block;
+	margin-bottom: 10px;
+}
+.tit{
+	text-align: center;
+	display: block;
+	background-color : #E5E5E5;
+	font-weight: bold;
+	padding : 20px;
+	
+}
+.label{
+	display: inline;
+	text-align: left;
+}
+.price{
+	display: inline;
+	float:right;
+}
+.price sale{
+	display : inline-block;
+}
+.total-price * {
+	font-size: 20px;
+	font-style: bold;
+	color :#fa5400;
+}
+
+.btn-order{
+	color: #fff;
+    background-color: #fa5400;
+    height: 48px;
+    font-size: 15px;
+    padding: 16px 50px;
+	width: 100%;
+	border: 0;
+	outline: 0;
+	margin-top: 20px;
+	text-align: center;
+}
+
