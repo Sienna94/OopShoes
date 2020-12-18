@@ -4,11 +4,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>   
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>  
 <c:import url="../menu.jsp" />
+</script>
 
 	<div class="basket" id="basket">
-		<h2 class ="cart-title">BASKET</h2>
+		<h2>BASKET</h2>
 <!-- 상품 총 수량 -->
 		<div data-text-content="true" style="font-size: 14px; color: #999" class="cart-num" align = "center">
 		<span class ="cart-num">
@@ -40,19 +42,21 @@
 						<div>
 							수량 : ${ob. getOdqty()}
 						</div>
-						<div data-text-content="true" style="font-size: 16px; color: rgb(243, 156, 18); font-weight: bold;" class="">
-							<span style="background-color: rgb(255, 255, 255); font-size: large;">${ob.getPprice()}원</span>	
+						<div style="font-size: 16px; color: rgb(243, 156, 18); id="price">
+							<span style="background-color: rgb(255, 255, 255); font-size: large;">
+							<fmt:formatNumber type="number" maxFractionDigits="3" value="${ob.getPprice()}"/>원</span>	
 						</div>
 						</div>
 					</div>
 					<div class = "btn-cancel">
-
-						<input type="button" value="삭제" onclick="location.href='cartDeleteEach.do?id=${ob.getCid()}'">
+						<input id="btn_cancel" type="button" value="삭제" onclick="location.href='cartDeleteEach.do?id=${ob.getCid()}'">
 					</div>
 				</div>
 			</div>
 		</div>				
 		</c:forEach>
+		<div class="item-line">
+		</div>
 	</c:if>
 					
 			<!-- 주문 check란-->
@@ -64,13 +68,13 @@
 							<div class ="item-price">
 								<div class="label">상품금액</div>	
 								<div class = "price">
-						<c:if test="${!empty list}">
-							<c:set var ="sum" value="0"/>
-							<c:forEach var="ob" items="${list}">
-							<c:set var="sum" value="${sum+ob.pprice}"/>
-							</c:forEach>
-									<strong>${sum}원</strong>
-						</c:if>
+									<c:if test="${!empty list}">
+										<c:set var ="sum" value="0"/>
+										<c:forEach var="ob" items="${list}">
+										<c:set var="sum" value="${sum+ob.pprice}"/>
+										</c:forEach>
+										<strong><fmt:formatNumber type="number" maxFractionDigits="3" value="${sum}" />원</strong>
+									</c:if>
 								</div>
 							</div>
 		                    <!-- 예상배송비 -->               
@@ -78,10 +82,14 @@
 		                       <div class="label">예상배송비</div>
 		                       <div class = "price">
 		                          <c:choose>
-		                             <c:when test = "${sum>=100000}">
-		                                3000원
+		                             <c:when test = "${sum<100000}">
+		                             	<c:set var="odel" value="3000"/>
+		                             	<fmt:formatNumber type="number" maxFractionDigits="3" value="${odel}" />원
 		                             </c:when>
-		                             <c:otherwise>0원</c:otherwise>
+		                             <c:otherwise>
+		                             	<c:set var="odel" value="0"/>
+		                             	<fmt:formatNumber type="number" maxFractionDigits="3" value="${odel}" />원
+		                             </c:otherwise>
 		                          </c:choose>
 		                       </div>
 		                    </div>
@@ -104,7 +112,9 @@
 						<div class="total-price ">
 							<strong class ="label" >총 결제 예정 금액</strong>
 							<div class ="price sale total">
-								<strong>${sum}원</strong>
+								<strong>
+								<fmt:formatNumber type="number" maxFractionDigits="3" value="${sum+odel}" />원
+								</strong>
 							</div>
 						</div>
 						<!-- 주문하기 버튼 -->
@@ -117,5 +127,5 @@
 						<button type="submit" class="btn-order" value="ORDER">ORDER</button></form>
 					</div>
 				</div>
-			</div>	
+			</div>
 <c:import url="../footer.jsp" />

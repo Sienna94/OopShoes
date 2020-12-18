@@ -1,22 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+<c:import url="../menu.jsp" />
 
-<meta charset="UTF-8">
-<title>결제 페이지</title>
-<!-- 웹폰트아이콘 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-<!-- 외부 css -->
-<link rel="stylesheet" href="/oop/css/payCss.css" type="text/css">
-
-<!-- <header>메뉴 is comming</header> -->
 <form name="orderform" id="orderform" method="post" class="orderform" action="/oop/payInput.do">
-	<section class="order-checkout">
-
+	<div class="order-checkout">
 		<div class ="order-wrap">
 			<div class ="contents-title">
-				<span class="title">주문결제</span>
+				<h2 class="title">ORDER</h2>
 			</div>	
 			<!-- 주문내역 확인란-->
 			<div class = "order-check">
@@ -31,7 +24,7 @@
 					<div class="cart-order-list">
 						<div class="order-list">
 							<!-- 상품 이미지 -->
-							<div class="image-wrap"><img src="${ob.getPimage1()}"></div>
+							<div class="image-wrap"><img id="pimage" src="${ob.getPimage1()}"></div>
 							<!-- 상품 디테일 -->
 							<div class="info-wrap">
 								<div class ="pName">
@@ -47,7 +40,8 @@
 								</div>
 								<div class="retail-price">
 								<input type ="hidden" name="pid" value="${ob.getPid()}">
-									<strong>${ob.getPprice()}원</strong>	
+									<span style="background-color: rgb(255, 255, 255); font-size: large;">
+									<fmt:formatNumber type="number" maxFractionDigits="3" value="${ob.getPprice()}" />원</span>
 								</div>
 							</div>
 						</div>
@@ -67,7 +61,9 @@
 								<c:forEach var="ob" items="${list}">
 								<c:set var="sum" value="${sum+ob.pprice}"/>
 								</c:forEach>
-										<strong>${sum}원</strong>
+										<strong>
+										<fmt:formatNumber type="number" maxFractionDigits="3" value="${sum}" />원
+										</strong>
 								</c:if></strong>
 							</div>
 						</div>
@@ -76,12 +72,14 @@
 	                       <div class="label">예상배송비</div>
 	                       <div class = "price">
 	                          <c:choose>
-	                             <c:when test = "${sum>=100000}">
-	                                3000원<input type ="hidden" name="odelivery" value="1">
-	                             </c:when>
-	                             <c:otherwise>0원<input type ="hidden" name="odelivery" value="0">
-	                             </c:otherwise>
-	                          </c:choose>
+		                             <c:when test = "${sum<100000}">
+		                             	<c:set var="odel" value="3000"/>
+		                             	<fmt:formatNumber type="number" maxFractionDigits="3" value="${odel}" />원
+		                             </c:when>
+		                             <c:otherwise>
+		                             	<c:set var="odel" value="0"/>
+		                            	 ${odel}원</c:otherwise>
+		                      </c:choose>
 	                       </div>
 	                    </div>
 						<!-- 상품 할인 금액 -->
@@ -103,8 +101,10 @@
 					<div class="total-price ">
 						<strong class ="label"  id="total-tit">총 결제 예정 금액</strong>
 						<div class ="price-sale-total">
-							<strong>${sum}원</strong>
-							<input type ="hidden" name="oamount" value="${sum}">
+							<strong>
+							<fmt:formatNumber type="number" maxFractionDigits="3" value="${sum+odel}" />원
+							</strong>
+							<input type ="hidden" name="oamount" value="${sum+odel}">
 						</div>
 					</div>
 					<!-- 안내사항 -->
@@ -146,11 +146,10 @@
 							<span class ="shipping-tit">배송주소</span>
 							<div class="post-wrap">
 								<input type="text" name="opost" id="opost" placeholder="우편번호">
-								<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+								<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" id ="btn_post"><br>
 								<input type="text" name ="address" id="address" placeholder="주소"><br>
 								<input type="text" name ="addressDetail" id="addressDetail" placeholder="상세주소">
 								<input type="text" name ="addressExtra" id="addressExtra" placeholder="참고항목">
-								
 
 								<input type="hidden" name="oaddress">
 								<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -240,7 +239,6 @@
 			</div>
 		</div>
 		</div>
-	</section>
+	</div>
 </form>
-</body>
-</html>
+<c:import url="../footer.jsp" />

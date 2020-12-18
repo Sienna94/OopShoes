@@ -15,6 +15,8 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="/oop/css/reset.css" type="text/css" />
     <!-- cartCss -->
 	<link rel="stylesheet" href="/oop/css/cartCss.css" type="text/css">
+	<!-- PayCss -->
+	<link rel="stylesheet" href="/oop/css/payCss.css" type="text/css">
   </head>
   <body>
     <!-- wrap -->
