@@ -7,15 +7,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<!-- 커밋 테스트용1 -->
-<h1>ddddd</h1>
-
-<!-- 이거는 어떻게 들어가냐  -->
-html 파일은 그냥 써도 된다
-
-테스트용 입니다
-
-
 <br>
 <br>
 <br>
