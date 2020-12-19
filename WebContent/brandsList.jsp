@@ -7,7 +7,7 @@
 		<c:if test="${!empty list}">
 			<c:forEach items="${list}" var="ob">
 			<div class="img_product">
-			<button id="btn_product" type="button"onclick="location.href='#'">
+			<button id="btn_product" type="button" onclick="location.href='productDetail.do?pg=${ob.getPid()}'">
 			<img src="/oop/img/shoes/${ob.getPimage1() }" alt="${ob.getPname() }">
 			</button>
 			</div>
