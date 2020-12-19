@@ -7,51 +7,56 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div><h1>마이페이지</h1></div>
-
-<div>
-아이디
-${logOK.getMid()}
-</div>
-<div>
-이름
-${logOK.getMname()}
-</div>
-<div>
-주소
-${logOK.getMaddress()}
-</div>
-<div>
-우편번호
-${logOK.getMpost()}
-</div>
-
-<div>
-전화번호
-${logOK.getMphone()}
-</div>
-<div>
-가입일
-${logOK.getMrdate()}
-</div>
-
-<a href="mypage/mypagemodify.jsp">회원정보수정</a>
 
 <br>
 <br>
 <br>
 <br>
 <br>
-<h1>주문현황</h1>
-<table style="width: 50%; margin-left: 200px">
+<br>
+<br>
+<br>
+<h1 style="margin-bottom: 10px; font-size: 1em;">개인정보</h1>
+
+<table style="width: 50%; margin: auto;">
+<tr>
+<th>아이디</th>
+<td>${logOK.getMid()}</td>
+</tr>
+<tr>
+<th>이름</th>
+<td>${logOK.getMname()}</td>
+</tr>
+<tr>
+<th>주소</th>
+<td>${logOK.getMaddress()}</td>
+</tr>
+<tr>
+<th>우편번호</th>
+<td>${logOK.getMpost()}</td>
+</tr>
+<tr>
+<th>전화번호</th>
+<td>${logOK.getMphone()}</td>
+</tr>
+<tr>
+<th>가입일</th>
+<td>${logOK.getMrdate()}</td>
+</tr>
+<tr>
+<th>회원정보수정</th>
+<td><a href="mypage/mypagemodify.jsp">회원정보수정</a></td>
+</tr>
+</table>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 style="margin-bottom: 10px; font-size: 1em;">주문현황</h1>
+<table style="width: 50%; margin: auto;">
 	<tr>
 		<th align="center">주문번호</th>
 		<th align="center">주문아이디</th>
