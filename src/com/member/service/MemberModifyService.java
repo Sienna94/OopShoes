@@ -21,7 +21,6 @@ public class MemberModifyService implements CommandAction{
 		String post = request.getParameter("post").trim();
 		String phone = request.getParameter("phone").trim();
 		
-		
 		MemberDTO dto = new MemberDTO();
 		dto.setMid(id);
 		dto.setMpw(pw);

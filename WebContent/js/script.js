@@ -54,14 +54,14 @@ $(function () {
 
   /*마이페이지 - 수정페이지 - 비밀번호 중복검사 ====================================================*/
   $("#btn_modifychk").click(function () {
-		$("#join_pass").val("");
-/*	    if(isTrue == 0){
-			$("#join_pass").val("");
+		/*$("#join_pass").val("");*/
+	    if(isTrue == 0){
+			/*$("#join_pass").val("");*/
 			$("#join_pass").focus();
 			return false;
 		}else{
 			$( "#target" ).submit();
-		}*/
+		}
 	});
 
   /*패스워드 중복검사 ====================================================*/

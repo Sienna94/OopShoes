@@ -7,6 +7,45 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
+<style>
+/* * {
+  margin-right: 100px;
+  padding: 0;
+  color: #535353;
+  font-size: 15px;
+} */
+table th, td {
+  border: 1px solid #ccc;
+}
+table th {
+  background-color: #fff;
+}
+table.type03 {
+  border-collapse: collapse;
+  text-align: left;
+  line-height: 1.5;
+  border-top: 1px solid #ccc;
+  border-left: 3px solid #369;
+  margin : 20px 10px;
+}
+table.type03 th {
+  width: 147px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  color: #153d73;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+
+}
+table.type03 td {
+  width: 349px;
+  padding: 10px;
+  vertical-align: top;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+} 
+</style>
 
 <br>
 <br>
@@ -18,35 +57,35 @@
 <br>
 <h1 style="margin-bottom: 10px; font-size: 1em;">개인정보</h1>
 
-<table style="width: 50%; margin: auto;">
-<tr>
-<th>아이디</th>
-<td>${logOK.getMid()}</td>
-</tr>
-<tr>
-<th>이름</th>
-<td>${logOK.getMname()}</td>
-</tr>
-<tr>
-<th>주소</th>
-<td>${logOK.getMaddress()}</td>
-</tr>
-<tr>
-<th>우편번호</th>
-<td>${logOK.getMpost()}</td>
-</tr>
-<tr>
-<th>전화번호</th>
-<td>${logOK.getMphone()}</td>
-</tr>
-<tr>
-<th>가입일</th>
-<td>${logOK.getMrdate()}</td>
-</tr>
-<tr>
-<th>회원정보수정</th>
-<td><a href="mypage/mypagemodify.jsp">회원정보수정</a></td>
-</tr>
+<table class="type03" style="width: auto; margin: auto;">
+	<tr>
+		<th>아이디</th>
+		<td>${logOK.getMid()}</td>
+	</tr>
+	<tr>
+		<th>이름</th>
+		<td>${logOK.getMname()}</td>
+	</tr>
+	<tr>
+		<th>주소</th>
+		<td>${logOK.getMaddress()}</td>
+	</tr>
+	<tr>
+		<th>우편번호</th>
+		<td>${logOK.getMpost()}</td>
+	</tr>
+	<tr>
+		<th>전화번호</th>
+		<td>${logOK.getMphone()}</td>
+	</tr>
+	<tr>
+		<th>가입일</th>
+		<td>${logOK.getMrdate()}</td>
+	</tr>
+	<tr>
+		<th>회원정보수정</th>
+		<td><a href="mypage/mypagemodify.jsp">회원정보수정</a></td>
+	</tr>
 </table>
 
 
@@ -56,11 +95,12 @@
 <br>
 <br>
 <h1 style="margin-bottom: 10px; font-size: 1em;">주문현황</h1>
-<table style="width: 50%; margin: auto;">
+<table class="type03" style="width: 50%; margin: auto;">
 	<tr>
 		<th align="center">주문번호</th>
 		<th align="center">주문아이디</th>
 		<th align="center">상품아이디</th>
+		<th align="center">상품이미지</th>
 		<th align="center">상품사이즈</th>
 		<th align="center">상품구매수량</th>
 	</tr>
@@ -69,7 +109,8 @@
 			<tr>
 				<td align="center">${ob.getOdid()}</td>
 				<td align="center">${ob.getMid()}</td>
-				<td align="center">${ob.getPname()}</td>
+				<td align="center"><a href="/oop/productDetail.do?pg=${ob.getPid()}">${ob.getPname()}</a></td>
+				<td align="center"><img src="/oop/img/shoes/${ob.getPimage1()}" width="50" height="50"></td>
 				<td align="center">${ob.getOdsize()}</td>
 				<td align="center">${ob.getOdqty()}</td>
 			</tr>

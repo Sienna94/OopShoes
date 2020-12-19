@@ -3,18 +3,22 @@ package com.order.dto;
 public class OrderdetailDTO {
 	private int odid;
 	private String mid;
+	private String pid;
 	private String pname;
+	private String pimage1;
 	private int odsize;
 	private int odqty;
 	
 	public OrderdetailDTO() {
 		super();
 	}
-	public OrderdetailDTO(int odid, String mid, String pname, int odsize, int odqty) {
+	public OrderdetailDTO(int odid, String mid, String pid, String pname, String pimage1, int odsize, int odqty) {
 		super();
 		this.odid = odid;
 		this.mid = mid;
+		this.pid = pid;
 		this.pname = pname;
+		this.pimage1 = pimage1;
 		this.odsize = odsize;
 		this.odqty = odqty;
 	}
@@ -30,11 +34,23 @@ public class OrderdetailDTO {
 	public void setMid(String mid) {
 		this.mid = mid;
 	}
+	public String getPid() {
+		return pid;
+	}
+	public void setPid(String pid) {
+		this.pid = pid;
+	}
 	public String getPname() {
 		return pname;
 	}
 	public void setPname(String pname) {
 		this.pname = pname;
+	}
+	public String getPimage1() {
+		return pimage1;
+	}
+	public void setPimage1(String pimage1) {
+		this.pimage1 = pimage1;
 	}
 	public int getOdsize() {
 		return odsize;

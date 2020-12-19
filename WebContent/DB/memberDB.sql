@@ -35,3 +35,8 @@ INSERT INTO MEMBER(mID, mPW, mNAME, mPHONE)
 VALUES ('eee', 'eee', '최철호', '010-5555-5555');
 
 
+select * from MEMBER;
+--회원탈퇴 복구
+UPDATE MEMBER 
+SET mDROP=0
+WHERE mID='c@c.com'

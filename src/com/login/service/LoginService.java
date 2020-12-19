@@ -27,6 +27,13 @@ public class LoginService implements CommandAction{
 		LoginDAO dao=new LoginDAO();
 //		System.out.println("id333: "+id+", "+"pass: "+ pass);
 		LoginDTO entity=dao.getLoginUser(id,pass);
+		
+		
+		//회원탈퇴시 로그인불가
+		if(entity.getMdrop() == 1) {
+			entity = null;
+		}	
+		
 //		System.out.println(entity.getPass());
 		HttpSession session=request.getSession();
 		
@@ -45,7 +52,8 @@ public class LoginService implements CommandAction{
 		}else {
 			session.setAttribute("logFail","아이디 혹은 패스워드를 잘못 입력되었습니다");
 			
-			return "/oop/login/login.jsp";
+//			return "/oop/login/login.jsp";
+			return "login/login.jsp";
 		}
 	}
 

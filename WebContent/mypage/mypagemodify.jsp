@@ -7,21 +7,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<script>
-/* $(function () {
-	  $("#btn_modifychk").click(function () {
-		    if(isTrue == 0){
-				$("#join_pass").val("");
-				$("#join_pass").focus();
-				return false;
-			}else{
-				$( "#target" ).submit();
-			}
-		});
-}); */
-
-</script>
-
 <br>
 <br>
 <br>
@@ -40,7 +25,7 @@
 		   </tr>
 		   <tr>
 		      <td>비밀번호</td>
-		      <td><input id="join_pass" type="password" name="join_pass" placeholder="영문/숫자/특수문자 조합8~16자리(괄호 사용 불가)" maxlength="20"/><!-- <input type="text" name="pw" size="50" value=""> --></td>
+		      <td><input id="join_pass" type="password" name="pw" placeholder="영문/숫자/특수문자 조합8~16자리(괄호 사용 불가)" maxlength="20"/><!-- <input type="text" name="pw" size="50" value=""> --></td>
 		      
 		   </tr> 
 		   <tr>
