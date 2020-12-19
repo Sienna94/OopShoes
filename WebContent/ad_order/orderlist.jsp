@@ -11,6 +11,7 @@
 				<th align="center">주문번호</th>
 				<th align="center">주문아이디</th>
 				<th align="center">상품아이디</th>
+				<th align="center">상품이미지</th>
 				<th align="center">상품사이즈</th>
 				<th align="center">상품구매수량</th>
 			</tr>
@@ -19,7 +20,8 @@
 					<tr>
 						<td align="center">${ob.getOdid()}</td>
 						<td align="center"><a href="/oop/orderView.do?mid=${ob.getMid()}">${ob.getMid()}</a></td>
-						<td align="center">${ob.getPname()}</td>
+						<td align="center"><a href="/oop/productDetail.do?pg=${ob.getPid()}">${ob.getPname()}</a></td>
+						<td align="center"><img src="/oop/img/shoes/${ob.getPimage1()}" width="50" height="50"></td>
 						<td align="center">${ob.getOdsize()}</td>
 						<td align="center">${ob.getOdqty()}</td>
 					</tr>

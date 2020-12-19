@@ -5,7 +5,7 @@
 <mapper namespace="mybatis.OrderMapper">
 	<select id="getOrderList" resultType="AdminOrderdetailDTO">
 		<![CDATA[
-	        SELECT od.odID, o.mID, p.pNAME, od.odSIZE, od.odQTY
+	        SELECT od.odID, o.mID, p.pID, p.pNAME, p.pIMAGE1, od.odSIZE, od.odQTY
 			FROM ORDERS_DETAIL od, ORDERS o, PRODUCT p
 			WHERE od.oID = o.oID AND od.pID = p.pID
 			ORDER BY od.odID DESC
