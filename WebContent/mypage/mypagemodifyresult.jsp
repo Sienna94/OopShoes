@@ -4,7 +4,11 @@
 <c:import url="../mymenu.jsp"/>
 
 <c:if test="${0 < n}">
-	<c:redirect url = "logout.do"/>
+	<script>
+		alert("정상적으로 수정되었습니다\n다시 로그인해주세요");
+		location.href="logout.do";	
+	</script>
+	<%-- <c:redirect url = "logout.do"/> --%>
 </c:if>
 <c:if test="${0 >= n}">
 	저장을 실패하였습니다
