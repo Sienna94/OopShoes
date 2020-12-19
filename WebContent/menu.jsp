@@ -35,7 +35,7 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
                   <!-- <li><a href="#">장바구니</a></li> -->
                 </c:if>
                 <c:if test="${!empty logOK }">
-                <li><a href="orderList.do?pg=my&id=${logOK.getMname()}">${logOK.getMname()}님</a></li>
+                <li><a href="orderList.do?pg=my&id=${logOK.getMid()}">${logOK.getMname()}님</a></li>
                   <li><a href="/oop/logout.do">로그아웃</a></li>
                   <!-- <li><a href="#">찜목록</a></li> -->
                   <li><a href="/oop/cartList.do?mid=${logOK.getMid()}">장바구니</a></li>

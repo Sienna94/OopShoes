@@ -34,6 +34,9 @@ VALUES ('ddd', 'ddd', '장호구', '010-4444-4444');
 INSERT INTO MEMBER(mID, mPW, mNAME, mPHONE) 
 VALUES ('eee', 'eee', '최철호', '010-5555-5555');
 
+INSERT INTO MEMBER(mID, mPW, mNAME, mPHONE) 
+VALUES ('c', 'c', 'c', '010-cccc-cccc');
+
 
 select * from MEMBER;
 --회원탈퇴 복구

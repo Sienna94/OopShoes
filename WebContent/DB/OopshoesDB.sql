@@ -70,6 +70,11 @@ VALUES (seq_ord.nextval, 'd', '4김철수', '010-4444-4444', '부산', '17-34', 
 INSERT INTO ORDERS(oID, mID, oNAME, oPHONE, oADDRESS, oPOST, oAMOUNT, oPAYMENT, oINVOICE, oDELIVERY) 
 VALUES (seq_ord.nextval, 'e', '5김철수', '010-5555-5555', '강원도', '172-47', 125000, 1, 4243, 0);
 
+--admin계정 주문정보(시퀀스6)
+INSERT INTO ORDERS(oID, mID, oNAME, oPHONE, oADDRESS, oPOST, oAMOUNT, oPAYMENT, oINVOICE, oDELIVERY) 
+VALUES (seq_ord.nextval, 'admin', '관리자', '010-admin-admin', '서울', '112-17', 253000, 1, 4243, 0);
+
+select * from ORDERS
 
 drop table ORDERS_DETAIL;
 drop sequence seq_ordd;
@@ -99,6 +104,16 @@ INSERT INTO ORDERS_DETAIL(odID, oID, pID, odSIZE, odQTY)
 VALUES (seq_ordd.nextval, 3, 1, 245, 5);
 INSERT INTO ORDERS_DETAIL(odID, oID, pID, odSIZE, odQTY) 
 VALUES (seq_ordd.nextval, 3, 2, 270, 3);
+
+--admin계정 주문리스트 추가(기본데이터)
+INSERT INTO ORDERS_DETAIL(odID, oID, pID, odSIZE, odQTY) 
+VALUES (seq_ordd.nextval, 6, 1, 270, 2);
+INSERT INTO ORDERS_DETAIL(odID, oID, pID, odSIZE, odQTY) 
+VALUES (seq_ordd.nextval, 6, 2, 275, 1);
+INSERT INTO ORDERS_DETAIL(odID, oID, pID, odSIZE, odQTY) 
+VALUES (seq_ordd.nextval, 6, 3, 280, 2);
+INSERT INTO ORDERS_DETAIL(odID, oID, pID, odSIZE, odQTY) 
+VALUES (seq_ordd.nextval, 6, 4, 250, 1);
 
 --테이블 여러개 사용 - 주문아이디(맴버아이디), 제품이름 가져오기
 SELECT od.odID, o.mID, p.pNAME, od.odSIZE, od.odQTY
