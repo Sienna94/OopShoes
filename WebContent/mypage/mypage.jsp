@@ -107,12 +107,12 @@ table.type03 td {
 	<c:if test="${!empty list}">
 		<c:forEach items="${list}" var="ob">					
 			<tr>
-				<td align="center">${ob.getOdid()}</td>
-				<td align="center">${ob.getMid()}</td>
-				<td align="center"><a href="/oop/productDetail.do?pg=${ob.getPid()}">${ob.getPname()}</a></td>
-				<td align="center"><img src="/oop/img/shoes/${ob.getPimage1()}" width="50" height="50"></td>
-				<td align="center">${ob.getOdsize()}</td>
-				<td align="center">${ob.getOdqty()}</td>
+				<td align="center" style="vertical-align:middle;">${ob.getOdid()}</td>
+				<td align="center" style="vertical-align:middle;">${ob.getMid()}</td>
+				<td align="center" style="vertical-align:middle;"><a href="/oop/productDetail.do?pg=${ob.getPid()}">${ob.getPname()}</a></td>
+				<td align="center" style="vertical-align:middle;"><img src="/oop/img/shoes/${ob.getPimage1()}" width="50" height="50"></td>
+				<td align="center" style="vertical-align:middle;">${ob.getOdsize()}</td>
+				<td align="center" style="vertical-align:middle;">${ob.getOdqty()}</td>
 			</tr>
 		</c:forEach>
 	</c:if>

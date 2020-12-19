@@ -42,4 +42,4 @@ select * from MEMBER;
 --회원탈퇴 복구
 UPDATE MEMBER 
 SET mDROP=0
-WHERE mID='c@c.com'
+WHERE mID='c'
