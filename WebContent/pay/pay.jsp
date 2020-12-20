@@ -227,6 +227,8 @@
 	                                <option value="2">신용카드</option>
 	                                <option value="1">실시간계좌이체</option>     
 	                    </select>
+	                    
+	                    
 <!-- 							<div class="payment-method-list">
 								<div class="payment-method-tit">
 									<img id="kakao" style=" vertical-align: sub;" alt="카카오페이" src="https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/theme/c-commerce/assets/images/icon_kakaopay_100.png"> 카카오페이</div>

@@ -14,9 +14,20 @@
 <!-- 상품 총 수량 -->
 		<div data-text-content="true" style="font-size: 14px; color: #999" class="cart-num" align = "center">
 		<span class ="cart-num">
-		</span>${fn:length(list)}개 상품</div>		
+		</span>${fn:length(list)}개 상품</div>	
+	<c:choose>	
+		<c:when test="${empty list}"> <!-- 카트에 제품 없을 때 -->
+		<div class = "product-select-all">
+		<div class="cart-empty">
+			<img src="img/basket.png">
+			<p id="cart_none">장바구니에 담긴 상품이 없습니다.</p>
+			<button id="btn_home" onclick="location.href='/oop/index.jsp'">계속 쇼핑하기</button>
+		</div></div>
+		<div class = "product-select-all"></div>
+		</c:when>
+	<c:otherwise><!-- 카트에 제품 있을 때 -->	
 <!-- 전체 삭제 버튼	 -->
-		<div class = "product-select-all" style="font-size: 14px; color: #999" class="cart-num" align = "left">
+		<div class = "product-select-all">
 		<c:if test="${!empty list}">
 			<c:forEach items="${list}" var="ob">
 			<c:set var ="all" scope="session" value="${ob.getMid()}"/>
@@ -127,5 +138,7 @@
 						<button type="submit" class="btn-order" value="ORDER">ORDER</button></form>
 					</div>
 				</div>
+			</c:otherwise>
+			</c:choose>
 			</div>
 <c:import url="../footer.jsp" />
