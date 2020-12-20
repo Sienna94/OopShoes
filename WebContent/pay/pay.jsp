@@ -109,7 +109,7 @@
 					</div>
 					<!-- 안내사항 -->
 					<div class = "info">
-						<li>장기간 장바구니에 보관하신 상품은 시간이 지남에 따라 가격과 혜택이 변동될 수 있으며, 최대 30일 동안 보관됩니다.</li>
+						<li id="li_info">장기간 장바구니에 보관하신 상품은 시간이 지남에 따라 가격과 혜택이 변동될 수 있으며, 최대 30일 동안 보관됩니다.</li>
 					</div>
 				</div>
 			</div>
@@ -121,12 +121,12 @@
 					<div class="customer-body">
 						<div class="name-con">
 							<span class ="name-tit">이름</span>
-							<input name="" type="text" value="이름">
+							<input class="input_info" type="text" value="이름">
 							
 						</div>
 						<div class="name-con">
 							<span class ="phone-tit">연락처</span>
-							<input type="text" data-parsley-required="" data-parsley-minlength="8" data-parsley-maxlength="12" data-parsley-pattern="^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$" data-parsley-type="digits" data-parsley-minlength-message="입력값이 너무 짧습니다." data-parsley-type-message="숫자만 입력 가능합니다." data-parsley-pattern-message="올바른 휴대폰 번호를 입력해주세요." data-parsley-required-message="필수 입력 항목입니다." data-parsley-maxlength-message="입력값이 너무 깁니다." id="phoneNumber" name="phoneNumber" value="-없이 입력">
+							<input class="input_info" type="text" data-parsley-required="" data-parsley-minlength="8" data-parsley-maxlength="12" data-parsley-pattern="^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$" data-parsley-type="digits" data-parsley-minlength-message="입력값이 너무 짧습니다." data-parsley-type-message="숫자만 입력 가능합니다." data-parsley-pattern-message="올바른 휴대폰 번호를 입력해주세요." data-parsley-required-message="필수 입력 항목입니다." data-parsley-maxlength-message="입력값이 너무 깁니다." id="phoneNumber" name="phoneNumber" value="-없이 입력">
 						</div>
 					</div>
 				</div>
@@ -136,20 +136,23 @@
 					<div class="shipping-body">
 						<div class="shipping-con">
 							<span class ="shipping-tit">받으시는 분</span>
-							<input name="oname" type="text">
+							<input class="input_info" name="oname" type="text">
 						</div>
 						<div class="shipping-con">
 							<span class ="shipping-tit">연락처</span>
-							<input name="ophone" type="text">
+							<input class="input_info" name="ophone" type="text">
 						</div>
 						<div class="shipping-con">
 							<span class ="shipping-tit">배송주소</span>
 							<div class="post-wrap">
-								<input type="text" name="opost" id="opost" placeholder="우편번호">
-								<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" id ="btn_post"><br>
-								<input type="text" name ="address" id="address" placeholder="주소"><br>
-								<input type="text" name ="addressDetail" id="addressDetail" placeholder="상세주소">
-								<input type="text" name ="addressExtra" id="addressExtra" placeholder="참고항목">
+								<div id="temp-wrap">
+								<input class="input_info" type="text" name="opost" id="opost" placeholder="우편번호">
+								<input class="input_info" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" id ="btn_post"><br>
+								</div>
+								
+								<input class="input_info" type="text" name ="address" id="address" placeholder="주소"><br>
+								<input class="input_info" type="text" name ="addressDetail" id="addressDetail" placeholder="상세주소">
+								<input class="input_info" type="text" name ="addressExtra" id="addressExtra" placeholder="참고항목">
 
 								<input type="hidden" name="oaddress">
 								<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -205,7 +208,7 @@
 							</div>
 								
 						<div class="shipping-con">
-							<select name="selectPersonalMessage" data-parsley-required="" data-parsley-required-message="필수 선택 항목입니다.">
+							<select class="sel_pay" name="selectPersonalMessage" data-parsley-required="" data-parsley-required-message="필수 선택 항목입니다.">
 	                   				<option value="">배송 메모를 선택해주세요.</option>
 	                                <option value="dt_3">배송 시 연락 부탁드립니다.</option>
 	                                <option value="dt_2">빠른 배송 부탁드립니다.</option>
@@ -217,7 +220,7 @@
 				<!-- 결제수단 선택 -->
 				<div class="customer-wrap">
 					<div class="payment-title">결제수단 선택</div>
-						<select name="opayment" data-parsley-required="" data-parsley-required-message="필수 선택 항목입니다.">
+						<select class="sel_pay" name="opayment" data-parsley-required="" data-parsley-required-message="필수 선택 항목입니다.">
 	                                <option value="3">카카오페이</option>
 	                                <option value="2">신용카드</option>
 	                                <option value="1">실시간계좌이체</option>     

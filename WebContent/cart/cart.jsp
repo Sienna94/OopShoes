@@ -22,7 +22,7 @@
 			<c:set var ="all" scope="session" value="${ob.getMid()}"/>
 			</c:forEach></c:if>
 			<input type="hidden" name="mid" value="${ob.getMid()}">
-			<input id="btn_deleteAll" type="button" value="전체삭제" onclick="location.href='cartDeleteAll.do?id=${all}'">
+			<input id="btn_deleteAll" type="button" value="전체삭제" onclick="if(confirm('장바구니를 비우시겠습니까?')){location.href='cartDeleteAll.do?id=${all}'}">
 		</div>
 <!-- 상품목록 -->
 	<c:if test="${!empty list}">
@@ -49,7 +49,7 @@
 						</div>
 					</div>
 					<div class = "btn-cancel">
-						<input id="btn_cancel" type="button" value="삭제" onclick="location.href='cartDeleteEach.do?id=${ob.getCid()}'">
+						<input id="btn_cancel" type="button" value="삭제" onclick="if(confirm('삭제하시겠습니까?')){location.href='cartDeleteEach.do?id=${ob.getCid()}'}">
 					</div>
 				</div>
 			</div>
