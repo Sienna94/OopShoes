@@ -74,10 +74,12 @@
 	                          <c:choose>
 		                             <c:when test = "${sum<100000}">
 		                             	<c:set var="odel" value="3000"/>
+		                             	<input type ="hidden" name="odelivery" value="1">
 		                             	<fmt:formatNumber type="number" maxFractionDigits="3" value="${odel}" />원
 		                             </c:when>
 		                             <c:otherwise>
 		                             	<c:set var="odel" value="0"/>
+		                             	<input type ="hidden" name="odelivery" value="0">
 		                            	 ${odel}원</c:otherwise>
 		                      </c:choose>
 	                       </div>

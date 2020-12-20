@@ -71,7 +71,7 @@ public class PayInputService implements CommandAction {
 		CartDAO dao = new CartDAO();
 		dao.cartDeleteAll(mid);
 		
-		return "pay/payInsertResult.jsp";
+		return "pay/payment.jsp";
 	}
 	
 }
