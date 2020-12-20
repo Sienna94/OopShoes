@@ -1,16 +1,14 @@
-<%@page import="com.login.dto.LoginDTO"%> <%@ page language="java"
-contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@page import="com.login.dto.LoginDTO"%> 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <title>Oopshoes</title>
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
     <script src="/oop/js/script.js"></script>
-    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="/oop/css/style.css" type="text/css" />
     <link rel="stylesheet" href="/oop/css/reset.css" type="text/css" />
     <!-- cartCss -->
@@ -52,8 +50,8 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
           </a>
           <!-- 검색 -->
           <div class="search_all">
-            <form action="" method="post">
-              <input type="text" name="search" id="search" />
+            <form action="productSearch.do" method="post">
+              <input id="search" type="text" name="search" placeholder="검색"/>
               <button type="submit" id="btn_search">
                 <img src="/oop/img/search.png" alt="search" id="search_img" />
               </button>

@@ -4,7 +4,23 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:import url="menu.jsp" />
-
+<%--
+    Cookie[] cookies = request.getCookies();
+    if(cookies !=null){
+        for(Cookie tempCookie : cookies){
+            if(tempCookie.getName().equals("id")){
+                //쿠키값으로 대신 로그인 처리함
+                /* session.setAttribute("id", tempCookie.getValue()); */
+                session.getAttribute("logOK");
+                
+            }
+        }
+    }
+--%>
+<%--
+        //세션값 가져오기, Object형으로 저장되기에 다운케스팅이 필요하다.
+        String id =(String)session.getAttribute("id");
+--%>
 <article>
 	<!-- img slider -->
 	<div class="slideshow">

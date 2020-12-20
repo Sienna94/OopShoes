@@ -3,6 +3,7 @@ package com.product.dao;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -100,6 +101,14 @@ public class ProductDAO {
 			session.close();
 			return dto;
 		}
-	
+	// 상품검색 -------------------------------------------------
+	public List<ProductDTO> getProductSearchList(Map<String, Object> map) {
+		SqlSession session=factory.openSession();
+		List<ProductDTO> list=session.selectList("mybatis.ProductMapper.getProductSearchList", map);
+		session.close();
+		
+		return list;
+	}
+
 
 }

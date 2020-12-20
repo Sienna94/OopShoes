@@ -77,13 +77,15 @@ header {
   margin-right: 15px;
   margin-top: 15px;
   /* background-color: #0000ff; */
-  text-align: centers;
+  text-align: center;
 }
 #search {
   width: 150px;
   height: 30px;
+  padding-left: 10px;
   border-radius: 15px;
-  /* border: #bebebe solid 1px; */
+  border: #bebebe solid 2px;
+  outline: none;
 }
 #btn_search {
   width: 30px;

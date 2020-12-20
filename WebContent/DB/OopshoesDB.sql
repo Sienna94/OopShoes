@@ -248,6 +248,7 @@ VALUES (seq_pid.nextval, '에어조던9레트로', '나이키', 229000, 69, '815
 
 update product set pbrand='나이키' where pbrand is null;
 update product set  pIMAGE1 = '6209f5da-e0e7-4119-896b-a9b1619da951_primary.jpg' 
+SELECT * FROM PRODUCT WHERE pNAME LIKE '%에어%';
 -- register -----------------------------------------------------------------------------------------
 select * from tab;
 

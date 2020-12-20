@@ -3,36 +3,41 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="mybatis.ProductMapper">
+	<!-- 전체검색 -->
 	<select id="getProductList" resultType="ProductDTO">
 		<![CDATA[
 	         SELECT * FROM PRODUCT ORDER BY PID DESC
      	]]>
 	</select>
+	<!-- 제품추가 -->
  	<insert id="productInsert" parameterType="ProductDTO">
 		<![CDATA[
-			INSERT INTO PRODUCT(pID, pNAME, pPRICE, pSTOCK, pIMAGE1, pIMAGE2, pIMAGE3, pDETAIL, pRDATE) 
-			VALUES (#{pid}, #{pname}, #{pprice}, #{pstock}, #{pimage1}, #{pimage2}, #{pimage3}, #{pdetail}, SYSDATE)
+			INSERT INTO PRODUCT(pID, pNAME, pBRAND, pPRICE, pSTOCK, pIMAGE1, pIMAGE2, pIMAGE3, pDETAIL, pRDATE) 
+			VALUES (seq_pid.nextval, #{pname}, #{pbrand}, #{pprice}, #{pstock}, #{pimage1}, #{pimage2}, #{pimage3}, #{pdetail}, SYSDATE)
 		]]>
 	</insert>
+	<!-- 제품수정 -->
 	<update id="productUpdate" parameterType="ProductDTO">
 		<![CDATA[
 			UPDATE PRODUCT 
-			SET pID=#{pid}, pNAME=#{pname}, pPRICE=#{pprice}, pDISCOUNT=#{pdiscount}, pSTOCK=#{pstock}, pIMAGE1=#{pimage1}, pIMAGE2=#{pimage2}, pIMAGE3=#{pimage3}, pDETAIL=#{pdetail}, pSELL=#{psell}
+			SET pID=#{pid}, pNAME=#{pname}, pBRAND=#{pbrand}, pPRICE=#{pprice}, pDISCOUNT=#{pdiscount}, pSTOCK=#{pstock}, pIMAGE1=#{pimage1}, pIMAGE2=#{pimage2}, pIMAGE3=#{pimage3}, pDETAIL=#{pdetail}, pSELL=#{psell}
 			WHERE pID=#{pid}
 		]]>
-	</update>	
+	</update>
+	<!-- 제품삭제 -->
 	<delete id="productDelete" parameterType="java.lang.Integer">
 	    <![CDATA[
 	         DELETE PRODUCT WHERE pID=#{id}
 	    ]]>
     </delete>
+    <!-- 제품정렬 -->
     <select id="getProductSort" resultType="ProductDTO">
 		<![CDATA[
 	         SELECT * FROM PRODUCT 
 	         WHERE pBRAND=#{pbrand}
 	         ORDER BY PID DESC
      	]]>
-	</select>	
+	</select>
 	<!-- 메뉴별 상품페이지 -->
 	<select id="getBrandsList" resultType="ProductDTO" parameterType="java.lang.String">
 		<![CDATA[
@@ -44,5 +49,12 @@
 		<![CDATA[
 			SELECT * FROM PRODUCT WHERE pID=#{pg}
 		]]>
-	</select>	
+	</select>
+	<!-- 제품검색 -->
+	<select id="getProductSearchList" parameterType="hashmap" resultType="ProductDTO">
+		<![CDATA[
+			SELECT * FROM PRODUCT WHERE pNAME LIKE #{pname}
+		]]>
+	</select>
+	
 </mapper>
