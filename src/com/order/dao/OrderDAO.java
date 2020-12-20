@@ -26,9 +26,9 @@ public class OrderDAO {
 		}
 	}
 	//주문리스트 가져오기------------------------------------------------
-	public List<OrderdetailDTO> getOrderList() {
+	public List<OrderDTO> getOrderList() {
 		SqlSession session = factory.openSession();
-		List<OrderdetailDTO> list = session.selectList("mybatis.OrderMapper.getOrderList");
+		List<OrderDTO> list = session.selectList("mybatis.OrderMapper.getOrderList");
 		session.close();
 		return list;
 	}
@@ -40,9 +40,9 @@ public class OrderDAO {
 		return list;
 	}
 	//상세보기------------------------------------------------
-	public List<OrderDTO> orderView(String mid) {
+	public List<OrderdetailDTO> orderView(OrderDTO dto) {
 		SqlSession session = factory.openSession();
-		List<OrderDTO> view = session.selectList("mybatis.OrderMapper.getOrderView", mid);
+		List<OrderdetailDTO> view = session.selectList("mybatis.OrderMapper.getOrderView", dto);
 		session.close();
 		return view;
 	}

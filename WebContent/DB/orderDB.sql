@@ -32,7 +32,7 @@ VALUES (seq_ord.nextval, 'e', '5김철수', '010-5555-5555', '강원도', '172-4
 --오더 디테일
 CREATE TABLE ORDERS_DETAIL(
     odID NUMBER(10) PRIMARY KEY, --오더상세아이디
-    oID NUMBER(10), --오더아이디
+    oID NUMBER(10), --주문아이디(번호)
     pID NUMBER(4), --상품아이디
     odSIZE NUMBER(10), --상품사이즈
     odQTY NUMBER(3) --상품구매수량
@@ -68,3 +68,18 @@ select * from ORDERS
 SELECT *
 FROM ORDERS
 WHERE mID = 'c'
+
+
+
+
+
+
+
+
+
+
+
+SELECT od.odID, o.mID, p.pID, p.pNAME, p.pIMAGE1, od.odSIZE, od.odQTY
+FROM ORDERS_DETAIL od, ORDERS o, PRODUCT p
+WHERE od.oID = 6 AND o.mID = 'admin' AND od.pID = p.pID 
+ORDER BY od.odID DESC

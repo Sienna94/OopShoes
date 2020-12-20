@@ -4,7 +4,33 @@
 <c:import url="../mymenu.jsp"/>
 
 <h2>주문상세페이지</h2>
-<c:if test="${!empty view}">
+<div class="tbl_head01">
+	<div class="tbl_head01">
+		<table>
+			<tr>
+				<th align="center">주문번호</th>
+				<th align="center">주문아이디</th>
+				<th align="center">상품아이디</th>
+				<th align="center">상품이미지</th>
+				<th align="center">상품사이즈</th>
+				<th align="center">상품구매수량</th>
+			</tr>
+			<c:if test="${!empty view}">
+				<c:forEach items="${view}" var="ob">					
+					<tr>
+						<td align="center">${ob.getOdid()}</td>
+						<td align="center"><a href="/oop/orderView.do?mid=${ob.getMid()}">${ob.getMid()}</a></td>
+						<td align="center"><a href="/oop/productDetail.do?pg=${ob.getPid()}">${ob.getPname()}</a></td>
+						<td align="center"><img src="/oop/img/shoes/${ob.getPimage1()}" width="50" height="50"></td>
+						<td align="center">${ob.getOdsize()}</td>
+						<td align="center">${ob.getOdqty()}</td>
+					</tr>
+				</c:forEach>
+			</c:if>
+		</table>
+	</div>
+</div>
+<%-- <c:if test="${!empty view}">
 	<c:forEach items="${view}" var="ob">
 		<div class="tbl_head01">
 					<table>
@@ -50,6 +76,6 @@
 			<input type="button" style="float:right;" value="삭제" onclick="">
 		</div>
 	</c:forEach>
-</c:if>
+</c:if> --%>
 </body>
 </html>

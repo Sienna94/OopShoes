@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.order.dao.OrderDAO;
+import com.order.dto.OrderDTO;
 import com.order.dto.OrderdetailDTO;
 
 import controller.CommandAction;
@@ -28,7 +29,7 @@ public class OrderListService implements CommandAction{
 			return "mypage/mypage.jsp";			
 		}else { // else if(pg.equals("ad"))
 			OrderDAO dao = new OrderDAO();
-			List<OrderdetailDTO> list = dao.getOrderList();  
+			List<OrderDTO> list = dao.getOrderList();  
 			
 			request.setAttribute("list", list);
 			
