@@ -57,7 +57,7 @@ table.type03 td {
 <br>
 <h1 style="margin-bottom: 10px; font-size: 1em;">개인정보</h1>
 
-<table class="type03" style="width: auto; margin: auto;">
+<table class="type03" style="width: 50%; margin: auto;">
 	<tr>
 		<th>아이디</th>
 		<td>${logOK.getMid()}</td>
