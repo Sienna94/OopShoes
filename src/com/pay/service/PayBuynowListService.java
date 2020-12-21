@@ -1,6 +1,5 @@
-package com.cart.service;
+package com.pay.service;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,14 +13,18 @@ import com.cart.dto.CartDTO;
 
 import controller.CommandAction;
 
-public class CartInputService implements CommandAction {
+public class PayBuynowListService implements CommandAction {
 
 	@Override 
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		request.setCharacterEncoding("UTF-8");
 		
-		System.out.println("CartInputService mid:"+ request.getParameter("mid"));
+		System.out.println("PayBuynowListService");
+		System.out.println(request.getParameter("mid")+":buynowlist");
 		
+	//1.장바구니 넣기
+		System.out.println("buynow1_inputcart");
+
 //		int cid= 0; //테이블에서 생성
 		String mid = request.getParameter("mid");
 		int pid=Integer.parseInt(request.getParameter("pid"));
@@ -47,18 +50,19 @@ public class CartInputService implements CommandAction {
 		int n = cartDao.cartInput(dto);
 			
 		request.setAttribute("n", n);
-		/* request.setAttribute("mid", mid); */
 		
-		// list보여주기
+	//2. 장바구니 리스트 가져오기
+		System.out.println("buynow2_cartlist");
+		
 		Map<String, String>map=new HashMap<>();
 		map.put("mid", mid);
 		
-		CartDAO dao = new CartDAO();
-		List<CartDTO> list = dao.getCartList(map);
+		CartDAO dao2 = new CartDAO();
+		List<CartDTO> list = dao2.getCartList(map);
 		
 		request.setAttribute("list", list);
 		request.setAttribute("mid", mid);
 		
-		return "cart/cart.jsp";		
+		return "pay/pay.jsp";
 	}
 }

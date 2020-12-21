@@ -53,6 +53,7 @@ public class PayInputService implements CommandAction {
 		dto.setOdsize(odsize);
 		dto.setOdqty(odqty);
 		
+		
 		//orders 테이블 넣기
 		PayDAO payDao = new PayDAO();
 		int n1 = payDao.payInput(dto);

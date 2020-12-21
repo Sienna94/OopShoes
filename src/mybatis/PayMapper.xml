@@ -3,6 +3,12 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="mybatis.PayMapper">
+	<select id="getBuynowList" parameterType="hashmap" resultType="CartDTO">
+		<![CDATA[
+	         SELECT * FROM CART
+	         WHERE mID LIKE #{mid}
+     	]]>
+	</select>
 	<select id="getCartList" parameterType="hashmap" resultType="CartDTO">
 		<![CDATA[
 	         SELECT * FROM CART

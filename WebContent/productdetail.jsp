@@ -1,71 +1,99 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+   <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!-- 세자리마다 콤마(,) 찍기 -->
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<c:import url="menu.jsp" />
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="stylesheet" href="/oop/css/productdetail.css" type="text/css">
+      <!-- 세자리마다 콤마(,) 찍기 -->
+      <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<div class="contents">
-	<div class="product_detail">
-		<h2 style="font-size: 22px; margin-top: 130px; margin-bottom: 20px;">[${dto.pbrand}] ${dto.pname}</h2>
+         <c:import url="menu.jsp" />
+         <link rel="preconnect" href="https://fonts.gstatic.com">
 
-		<!-- 이미지 영역 -->
-		<div class="detail_img">
-			<img src="/oop/img/shoes/${dto.getPimage1()}" width="250" height="250">
-			<img src="/oop/img/shoes/${dto.getPimage2()}" width="250" height="250">
-			<img src="/oop/img/shoes/${dto.getPimage3()}" width="250" height="250">
-			
-		</div>
+         <!-- 웹 폰트 적용 -->
+         <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 
-		<div class="detail_table">
-			<h4 style="font-size: 14px; margin-top: 10px; margin-bottom: 10px;">
-				<fmt:formatNumber value="${dto.getPprice()}" pattern="#,### 원" />
-			</h4>
-			<h6 style="margin-bottom: 10px;">${dto.pdetail}</h6>
+      <script>
+         function cartIn(){
+            form = document.form1;
+            form.action = "/oop/cartInput.do";
+            form.submit();
+         }
+         function buyNow(){
+            form = document.form1;
+            form.action = "/oop/payBuynowList.do";
+            form.submit();
+         }
+      </script>
 
-			<!-- 상품 수량 -->
-			<form name="form1" method="post" action="$/oop/cart/insert.do">
-				<input type="hidden" name="productId" value="${dto.pid}">
-				<select name="amount" style="margin-bottom: 10px">
-					<c:forEach begin="1" end="10" var="i">
-						<option value="${i}">${i}</option>
-					</c:forEach>
-				</select>&nbsp;개<br>SIZE 
-				<input type="hidden" name="productId" value="${dto.pid}">
-				<select name="amount">
-					<option value="225">225</option>
-					<option value="230">230</option>
-					<option value="235">235</option>
-					<option value="240">240</option>
-					<option value="245">245</option>
-					<option value="250">250</option>
-					<option value="255">255</option>
-					<option value="260">260</option>
-					<option value="265">265</option>
-					<option value="270">270</option>
-					<option value="275">275</option>
-					<option value="280">280</option>
-					<option value="285">285</option>
-					<option value="290">290</option>
-					<option value="295">295</option>
-					<option value="300">300</option>
-				</select>
-				<button type="submit" class="btn" value="cart">ADD TO CART</button>
-				<button type="submit" class="btn" value="buy">BUY NOW</button>
-			</form>
-			<br>
-			<!-- 상품목록 누르면 브랜드 페이지로 이동 -->
-			<%-- 					 <form action="/oop/brandsList.do?pg=${dto.getPbrand()}" method="post"> --%>
-			<!-- 					<button type="submit" class="btn" >상품목록</button> -->
-			<!-- 					</form> -->
-			<%-- 					<a href="/oop/brandsList.do?pg=${brand}'">상품목록</a> --%>
-			<%-- 					<c:out value="${dto.getPbrand()}" /> --%>
-		</div>
-	</div>
-</div>
+         <section>
+            <h2 style="margin-top: 130px; margin-bottom: 20px;">상품 상세정보</h2>
+            <div class="product" style="margin-top: -10px;">
+               <img src="/oop/img/shoes/${dto.getPimage1()}" width="300" height="300">
+               <img src="/oop/img/shoes/${dto.getPimage1()}" width="300" height="300">
+               <!-- </div> -->
+               <table border="1" style="height: 300px; width: 400px; margin: auto;">
+                  <tr align="center">
+                     <td>상품명</td>
+                     <td>[${dto.pbrand}] ${dto.pname}</td>
+                  </tr>
+                  <tr align="center">
+                     <td>가격</td>
+                     <td>
+                        <fmt:formatNumber value="${dto.getPprice()}" pattern="#,### 원" />
+                     </td>
+                  </tr>
 
-<%-- end section --%>
-<c:import url="footer.jsp" />
+                  <!-- 상품 수량 -->
+                  <tr align="center">
+                     <td colspan="2">
+                     
+                        <!-- 장바구니 -->
+                        <form id="form_a" name="form1" method="post" action="${path}/oop/cart/cartInput.do">
+                           <input type="hidden" name="pid" value="${dto.getPid()}">
+                           <select name="odqty">
+                              <c:forEach begin="1" end="10" var="i">
+                                 <option value="${i}">${i}</option>
+                              </c:forEach>
+                           </select>&nbsp;개<br>
+                           <!-- 사이즈 선택이 없어서 임시로 만들었습니다. 수정해주세요 -->
+                           <select class="size" name="odsize" data-parsley-required="" data-parsley-required-message="필수 선택 항목입니다.">
+                                      <option value="230">230</option>
+                                      <option value="235">235</option>
+                                      <option value="240">240</option>
+                                      <option value="245">245</option>
+                                      <option value="250">250</option>
+                                      <option value="255">255</option>
+                                      <option value="260">260</option>
+                                      <option value="265">265</option>
+                                      <option value="270">270</option>
+                                      <option value="275">275</option>
+                                      <option value="280">280</option>
+                                      <option value="285">285</option>
+                                      <option value="290">290</option>           
+                                </select>
+                           <!-- 넘겨줄 파라메터값들 -->
+                           
+                           <input type="hidden" name="mid" value="${logOK.getMid()}">
+                          <%--  <input type="hidden" name="pid" value="${dto.pid}"> --%>
+                           <input type="hidden" name="pimage1" value="${dto.getPimage1()}">
+                           <input type="hidden" name="pname" value="${dto.pname}">
+                           <input type="hidden" name="pprice" value="${dto.getPprice()}">
+                        <%--    <input type="hidden" name="odsize"> 셀렉트에서--%>
+                        <%--    <input type="hidden" name="odqty" > 셀렉트에서--%>
+                        
+                        
+                           <!-- 장바구니 -->
+                           <br> <input type="button" value="장바구니" onclick="cartIn()" style="font-family: 'Jua', sans-serif">
+                           <!-- 바로구매 -->
+                           <input type="button" value="구매하기" onclick="buyNow()" style="font-family: 'Jua', sans-serif">
+                           
+                        </form>
+                        
+                        
+                        <br> <a href="location.href='productDetail.do?pg=${dto.getPid()}'">상품목록</a>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </section>
+
+         <%-- end section --%>
+            <c:import url="footer.jsp" />

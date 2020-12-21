@@ -33,7 +33,7 @@ public class CartDAO {
 		SqlSession session = factory.openSession();
 		int n = 0;
 		try {
-			n = session.insert("mybatis.CartMapper.productInsert", dto);
+			n = session.insert("mybatis.CartMapper.cartInsert", dto);
 			if(n>0)
 				session.commit();
 		}catch(Exception e) {
@@ -43,7 +43,7 @@ public class CartDAO {
 			session.close();
 		}
 		return n;
-	}
+	}	
 	//장바구니 리스트 가져오기 멤버 아이디로 검색
 	public List<CartDTO> getCartList(Map<String, String> map){
 		SqlSession session = factory.openSession();

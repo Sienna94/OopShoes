@@ -30,6 +30,13 @@ public class PayDAO {
 			System.out.println("DAO 오류");
 		}
 	}
+	//BUY NOW 바로 리스트 가져오기 (카트 안거치고 바로 pay)
+	public List<CartDTO> getBuynowList(Map<String, String> map){
+		SqlSession session = factory.openSession();
+		List<CartDTO> list = session.selectList("mybatis.CartMapper.getCartList", map);
+		session.close();
+		return list;
+	}
 	//결제페이지에 장바구니 리스트 가져오기 멤버 아이디로 검색
 	public List<CartDTO> getCartList(Map<String, String> map){
 		SqlSession session = factory.openSession();
