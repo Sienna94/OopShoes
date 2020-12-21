@@ -33,8 +33,9 @@
 					<c:forEach begin="1" end="10" var="i">
 						<option value="${i}">${i}</option>
 					</c:forEach>
-				</select>&nbsp;개<br>SIZE <input type="hidden" name="productId"
-					value="${dto.pid}"> <select name="amount">
+				</select>&nbsp;개<br>SIZE 
+				<input type="hidden" name="productId" value="${dto.pid}">
+				<select name="amount">
 					<option value="225">225</option>
 					<option value="230">230</option>
 					<option value="235">235</option>

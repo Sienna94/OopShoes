@@ -10,7 +10,7 @@
 <style>
 /* 푸터 */
 .footer {
-   margin-top: 40px;
+   margin-top: 100px;
    text-align: center;
    padding: 10px 0;
 /*    background-color: #ffffff; */
