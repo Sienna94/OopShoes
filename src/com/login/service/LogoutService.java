@@ -24,18 +24,18 @@ public class LogoutService implements CommandAction {
 			session.invalidate();
 
 			// 로그인 관련 쿠키 삭제
-//			Cookie[] cookies = request.getCookies();
-//			if (cookies != null) {
-//				for (Cookie tempCookie : cookies) {
-//					if (tempCookie.getName().equals("id")) {
-//						tempCookie.setMaxAge(0);
-//						tempCookie.setPath("/");
-//						response.addCookie(tempCookie);
-//						
-//						return "index.jsp";
-//					}
-//				}
-//			}
+			Cookie[] cookies = request.getCookies();
+			if (cookies != null) {
+				for (Cookie tempCookie : cookies) {
+					if (tempCookie.getName().equals("id")) {
+						tempCookie.setMaxAge(0);
+						tempCookie.setPath("/");
+						response.addCookie(tempCookie);
+						
+						return "index.jsp";
+					}
+				}
+			}
 		}
 		return "index.jsp";
 	}

@@ -17,6 +17,17 @@
         }
     }
 --%>
+<%
+//쿠키가져오기
+Cookie[] cookies = request.getCookies();
+if(cookies != null){
+    for(Cookie tempCookie : cookies){
+        if(tempCookie.getName().equals("id")){
+        	session.setAttribute("id", tempCookie.getValue());
+        }
+    }
+}
+%>
 <%--
         //세션값 가져오기, Object형으로 저장되기에 다운케스팅이 필요하다.
         String id =(String)session.getAttribute("id");

@@ -1,7 +1,7 @@
 <%@page import="com.product.dto.ProductDTO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
-<%--\
+<% 
 //쿠키가져오기
 Cookie[] cookies = request.getCookies();
 if(cookies != null){
@@ -11,9 +11,10 @@ if(cookies != null){
             //특정 page로 이동하라는 정보만 준다.
             /* response.sendRedirect("session_Main.jsp"); */
             System.out.println("cookie!=null: "+cookies);
+            
         	session.getAttribute("logOK");
         }
     }
 }
---%>
+%>
 <%response.sendRedirect("/oop/contentList.do");%>

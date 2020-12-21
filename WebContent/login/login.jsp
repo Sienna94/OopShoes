@@ -7,7 +7,6 @@
         <div class="login">
           <!-- section_header -->
           <div class="section_header">
-            <!-- <img src="../img/Oopshoes.png" alt="oopshoes-logo" id="img" /> -->
             <h2>로그인</h2>
           </div>
           <!-- //section_header -->

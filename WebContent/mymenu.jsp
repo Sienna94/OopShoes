@@ -12,8 +12,8 @@
 		<button type="button" onclick="location.href='/oop/index.jsp'">홈으로</button>
 		<h2 style="display: inline;">&nbsp;&nbsp;&nbsp;OOPSHOSE(관리자페이지)</h2><br><br><br>
 		
-		<button type="button" style="width:33%;" onclick="location.href='/oop/productList.do'">상품관리</button>
-		<button type="button" style="width:33%;" onclick="location.href='/oop/orderList.do?pg=ad&id=null'">주문관리</button>
-		<button type="button" style="width:33%;" onclick="location.href='/oop/memberList.do'">회원관리</button><br><br>
+		<button type="button" style="width:200px;" onclick="location.href='/oop/productList.do'">상품관리</button>
+		<button type="button" style="width:200px;" onclick="location.href='/oop/orderList.do?pg=ad&id=null'">주문관리</button>
+		<button type="button" style="width:200px;" onclick="location.href='/oop/memberList.do'">회원관리</button><br><br>
 
 	</div>

@@ -78,7 +78,7 @@
           </div>
             <button id="btn_chk" class="btn_join" >회원 가입</button>
           </form>
-        </div>
+       </div>
       </section>
       <!-- //section -->
       <!-- footer -->
