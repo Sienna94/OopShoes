@@ -3,6 +3,12 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="mybatis.CartMapper">
+	<insert id="productInsert" parameterType="CartDTO">
+		<![CDATA[
+			INSERT INTO CART( cID, mID , pID, pIMAGE1,  pName , pPRICE, odSIZE, odQTY)
+			VALUES (seq_cart.nextval, #{mid}, #{pid}, #{image1}, #{name}, #{pprice}, #{odsize}, #{odQTY})
+		]]>
+	</insert>
 	<select id="getCartList" parameterType="hashmap" resultType="CartDTO">
 		<![CDATA[
 	         SELECT * FROM CART
