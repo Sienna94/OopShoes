@@ -77,5 +77,5 @@ table td {
 		</table>
 	</div>
 </form>
-</body>
-</html>
+
+<c:import url="../footer.jsp" />

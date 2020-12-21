@@ -120,5 +120,5 @@ table.type03 td {
 		주문내역이 없습니다
 	</c:if>
 </table>
-</body>
-</html>
+
+<c:import url="../footer.jsp" />
