@@ -3,6 +3,9 @@
 <c:import url="menu.jsp" />
 <section>
 <!-- 브랜드별 상품 페이지 -->
+<article>
+<h1 style="font-size: 30px;">${pg}</h1>
+</article>
 	<div class="product">
 		<c:if test="${!empty list}">
 			<c:forEach items="${list}" var="ob">

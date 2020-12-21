@@ -25,6 +25,7 @@ public class BrandsListService implements CommandAction {
 //		HttpSession session = request.getSession();
 //		session.setAttribute("list", list);
 		request.setAttribute("list", list);
+		request.setAttribute("pg", pg);
 //		if(list != null) {
 //			System.out.println("list OK");
 //		}else {
