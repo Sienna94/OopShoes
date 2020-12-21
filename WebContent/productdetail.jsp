@@ -3,50 +3,62 @@
 
 		<!-- 세자리마다 콤마(,) 찍기 -->
 		<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
 			<c:import url="menu.jsp" />
 			<link rel="preconnect" href="https://fonts.gstatic.com">
+			<link rel="stylesheet" href="/oop/css/productdetail.css" type="text/css">
 
-			<!-- 웹 폰트 적용 -->
-			<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+			<div class="contents">
+				<div class="product_detail">
+					<h2 style="margin-top: 130px; margin-bottom: 20px;">상품 상세정보</h2>
 
-			<section>
-				<h2 style="margin-top: 130px; margin-bottom: 20px;">상품 상세정보</h2>
-				<div class="product" style="margin-top: -10px;">
-					<img src="/oop/img/shoes/${dto.getPimage1()}" width="300" height="300">
-					<img src="/oop/img/shoes/${dto.getPimage1()}" width="300" height="300">
-					<!-- </div> -->
-					<table border="1" style="height: 300px; width: 400px; margin: auto;">
-						<tr align="center">
-							<td>상품명</td>
-							<td>[${dto.pbrand}] ${dto.pname}</td>
-						</tr>
-						<tr align="center">
-							<td>가격</td>
-							<td>
-								<fmt:formatNumber value="${dto.getPprice()}" pattern="#,### 원" />
-							</td>
-						</tr>
+					<!-- 이미지 영역 -->
+					<div class="detail_img">
+						<img src="/oop/img/shoes/${dto.getPimage1()}" width="250" height="250">
+						<img src="/oop/img/shoes/${dto.getPimage2()}" width="250" height="250">
+						<img src="/oop/img/shoes/${dto.getPimage3()}" width="250" height="250">
+					</div>
+					
 
-						<!-- 상품 수량 -->
-						<tr align="center">
-							<td colspan="2">
-								<form name="form1" method="post" action="${path}/oop/cart/insert.do">
-									<input type="hidden" name="productId" value="${dto.pid}">
-									<select name="amount">
-										<c:forEach begin="1" end="10" var="i">
-											<option value="${i}">${i}</option>
-										</c:forEach>
-									</select>&nbsp;개<br>
-									<br> <input type="submit" value="장바구니" style="font-family: 'Jua', sans-serif">
-									<input type="submit" value="구매하기" style="font-family: 'Jua', sans-serif">
-								</form>
-								<br> <a href="location.href='productDetail.do?pg=${dto.getPid()}'">상품목록</a>
-							</td>
-						</tr>
-					</table>
+					<div class="detail_table">
+								<h3 style="font-size: 16px; margin-top: 20px; margin-bottom: 10px;">[${dto.pbrand}] ${dto.pname}</h3>
+								<h4 style="font-size: 14px; margin-bottom: 5px;"><fmt:formatNumber value="${dto.getPprice()}" pattern="#,### 원" /></h4>
+								<h6 style="margin-bottom: 10px;">${dto.pdetail}</h6>
+
+							<!-- 상품 수량 -->
+							<tr align="center">
+								<td colspan="2">
+									<form name="form1" method="post" action="${path}/oop/cart/insert.do" style="">
+										<input type="hidden" name="productId" value="${dto.pid}">
+										<select name="amount">
+											<c:forEach begin="1" end="10" var="i">
+												<option value="${i}">${i}</option>
+											</c:forEach>
+										</select>&nbsp;개<br>사이즈 선택
+										<input type="hidden" name="productId" value="${dto.pid}">
+										<select name="amount">
+											<c:forEach begin="225" end="300" var="i">
+												<option value="${i}">${i}</option>
+											</c:forEach>
+										</select>
+										<button type="submit" class="btn" value="cart">ADD TO CART</button>
+										<button type="submit" class="btn" value="buy">BUY NOW</button>
+									</form> <br>
+
+									
+
+
+									<!-- 상품목록 누르면 브랜드 페이지로 이동 -->
+									<%-- <form action="/oop/brandsList.do?pg=${dto.getPbrand()}" method="post"> --%>
+										<!-- 							<button type="submit" class="btn" >상품목록</button> -->
+
+										<!-- </form> -->
+										<%-- <a href="/oop/brandsList.do?pg=${brand}'">상품목록</a> --%>
+											<%-- <c:out value="${dto.getPbrand()}" /> --%>
+								</td>
+							</tr>
+					</div>
 				</div>
-			</section>
+			</div>
 
 			<%-- end section --%>
 				<c:import url="footer.jsp" />
