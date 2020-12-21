@@ -65,6 +65,8 @@ select * from ORDERS_DETAIL;
 
 select * from ORDERS
 
+delete from ORDERS where oid = 8;
+
 SELECT *
 FROM ORDERS
 WHERE mID = 'c'
