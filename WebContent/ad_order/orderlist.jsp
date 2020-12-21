@@ -72,9 +72,6 @@
 						</tr>
 					</table>
 		</div><br>
-		<div class="btn_list01">
-			<input type="button" style="float:right;" value="삭제" onclick="">
-		</div>
 	</c:forEach>
 </c:if>
 </body>

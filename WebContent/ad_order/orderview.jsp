@@ -19,7 +19,7 @@
 				<c:forEach items="${view}" var="ob">					
 					<tr>
 						<td align="center">${ob.getOdid()}</td>
-						<td align="center"><a href="/oop/orderView.do?mid=${ob.getMid()}">${ob.getMid()}</a></td>
+						<td align="center">${ob.getMid()}</td>
 						<td align="center"><a href="/oop/productDetail.do?pg=${ob.getPid()}">${ob.getPname()}</a></td>
 						<td align="center"><img src="/oop/img/shoes/${ob.getPimage1()}" width="50" height="50"></td>
 						<td align="center">${ob.getOdsize()}</td>
