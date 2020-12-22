@@ -10,19 +10,21 @@
 			<th>상품코드</th>
 			<td align="center">${param.id}</td>
 			<th>이미지1</th>
-			<td align="center"><img src="/oop/images/${param.image1}" width="50" height="50" border="0"></td>
+			<td align="center"><img src="/oop/img/shoes/${param.image1}" width="50" height="50" border="0"></td>
 		</tr>
 		<tr>
 			<th>상품이름</th>
-			<td align="center">${param.name}</td>
+			<td align="center">
+			${param.name}</td>
 			<th>이미지2</th>
-			<td align="center">${param.image2}</td>
+			<td align="center">
+			<img src="/oop/img/shoes/${param.image2}" width="50" height="50" border="0"></td>
 		</tr>
 		<tr>
 			<th>브랜드</th>
 			<td align="center">${param.brand}</td>
 			<th>이미지3</th>
-			<td align="center">${param.image3}</td>
+			<td align="center"><img src="/oop/img/shoes/${param.image3}" width="50" height="50" border="0"></td>
 		</tr>
 		<tr>
 			<th>가격</th>

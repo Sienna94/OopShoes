@@ -17,15 +17,24 @@ public class BrandsListService implements CommandAction {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// 데이터 가져오기_ "/oop/brandsList.do?pg=메뉴명"에서 pg로 보낸걸 받음
 		String pg = request.getParameter("pg");
-
+		List<ProductDTO> list;
 		ProductDAO dao = new ProductDAO();
-		List<ProductDTO> list = dao.getBrandsList(pg);
-
+		if (pg.equals("new")) {
+			list = dao.getNewList(pg);
+		}else if(pg.equals("best")) {
+			list = dao.getBestList(pg);
+		}else if(pg.equals("event")) {
+			list = dao.getEventList(pg);
+		}else {
+			list = dao.getBrandsList(pg);
+		}
+		request.setAttribute("list", list);
+		request.setAttribute("pg", pg);
+//		List<ProductDTO> list = dao.getBrandsList(pg);
 		// 세션설정은 페이지가 꺼질때까지 유지된다(혹은 세션을 종료할때까지)
 //		HttpSession session = request.getSession();
 //		session.setAttribute("list", list);
-		request.setAttribute("list", list);
-		request.setAttribute("pg", pg);
+		
 //		if(list != null) {
 //			System.out.println("list OK");
 //		}else {

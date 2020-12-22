@@ -38,12 +38,34 @@
 	         ORDER BY PID DESC
      	]]>
 	</select>
+	
+	<!-- 상품페이지 출력  ============================================-->
 	<!-- 메뉴별 상품페이지 -->
 	<select id="getBrandsList" resultType="ProductDTO" parameterType="java.lang.String">
 		<![CDATA[
 	         SELECT * FROM PRODUCT WHERE PBRAND = #{pg}
      	]]>
 	</select>
+	<!-- 신상품페이지 -->
+	<select id="getNewList" resultType="ProductDTO" parameterType="java.lang.String">
+		<![CDATA[
+	        SELECT * FROM PRODUCT WHERE ROWNUM <= 12 ORDER BY PRDATE DESC
+     	]]>
+	</select>
+	<!-- 베스트상품페이지 -->
+	<select id="getBestList" resultType="ProductDTO" parameterType="java.lang.String">
+		<![CDATA[
+	         SELECT * FROM PRODUCT WHERE ROWNUM <= 12 ORDER BY pSELL DESC
+     	]]>
+	</select>
+	<!-- 이벤트(할인)상품페이지 -->
+	<select id="getEventList" resultType="ProductDTO" parameterType="java.lang.String">
+		<![CDATA[
+	         SELECT * FROM PRODUCT WHERE pDISCOUNT > 0
+     	]]>
+	</select>
+	<!-- //상품페이지 출력  ============================================-->
+	
 	<!-- 상세 페이지 -->
 	<select id="getProductDetail" parameterType="java.lang.Integer" resultType="ProductDTO">
 		<![CDATA[
