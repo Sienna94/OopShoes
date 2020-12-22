@@ -123,12 +123,12 @@
 					<div class="customer-body">
 						<div class="name-con">
 							<span class ="name-tit">이름</span>
-							<input name="name" class="input_info" type="text" value="이름">
+							<input name="name" class="input_info" type="text" placeholder="이름">
 							
 						</div>
 						<div class="name-con">
 							<span class ="phone-tit">연락처</span>
-							<input name="phone" class="input_info" type="text" data-parsley-required="" data-parsley-minlength="8" data-parsley-maxlength="12" data-parsley-pattern="^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$" data-parsley-type="digits" data-parsley-minlength-message="입력값이 너무 짧습니다." data-parsley-type-message="숫자만 입력 가능합니다." data-parsley-pattern-message="올바른 휴대폰 번호를 입력해주세요." data-parsley-required-message="필수 입력 항목입니다." data-parsley-maxlength-message="입력값이 너무 깁니다." id="phoneNumber" name="phoneNumber" value="-없이 입력">
+							<input name="phone" class="input_info" type="text" data-parsley-required="" data-parsley-minlength="8" data-parsley-maxlength="12" data-parsley-pattern="^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$" data-parsley-type="digits" data-parsley-minlength-message="입력값이 너무 짧습니다." data-parsley-type-message="숫자만 입력 가능합니다." data-parsley-pattern-message="올바른 휴대폰 번호를 입력해주세요." data-parsley-required-message="필수 입력 항목입니다." data-parsley-maxlength-message="입력값이 너무 깁니다." id="phoneNumber" name="phoneNumber" placeholder="-없이 입력">
 						</div>
 					</div>
 				</div>
