@@ -30,9 +30,10 @@
 		<div class="detail_img">
 			<img src="/oop/img/shoes/${dto.getPimage1()}" width="250"  height="250">
 			<img src="/oop/img/shoes/${dto.getPimage2()}" width="250" height="250">
-			<img 	src="/oop/img/shoes/${dto.getPimage3()}" width="250" height="250">
+			<img src="/oop/img/shoes/${dto.getPimage3()}" width="250" height="250">
 		</div>
-
+		
+		<!-- 가격 표시 -->
 		<div class="detail_table">
 			<h3 style="margin-top: 10px; margin-bottom: 10px;">
 				<fmt:formatNumber value="${dto.getPprice()}" pattern="#,### 원" /></h3>
@@ -42,11 +43,20 @@
 
 			<!-- 상품 수량 및 사이즈 선택란 -->
 			<form name="form1" method="post" action="$/oop/cart/insert.do">
-				<input type="hidden" name="productId" value="${dto.pid}">
-				<select 	name="amount" style="margin-bottom: 10px">
-					<c:forEach begin="1" end="10" var="i">
-						<option value="${i}">${i}</option>
-					</c:forEach>
+<%-- 				<input type="hidden" name="productId" value="${dto.pid}"> --%>
+				<select 	name="odqty" style="margin-bottom: 10px">
+<%-- 					<c:forEach begin="1" end="10" var="i"> --%>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+<%-- 					</c:forEach> --%>
 				</select>&nbsp;개<br>SIZE
 				<select class="size" name="odsize" data-parsley-required="" data-parsley-required-message="필수 선택 항목입니다.">
 					<option value="230">230</option>
@@ -66,15 +76,15 @@
 				
 				<!-- 넘겨줄 파라메터값들 -->
 				<input type="hidden" name="mid" value="${logOK.getMid()}">
-				<%--  <input type="hidden" name="pid" value="${dto.pid}"> --%>
+				<input type="hidden" name="pid" value="${dto.pid}">
 				<input type="hidden" name="pimage1" value="${dto.getPimage1()}">
-				<input type="hidden" name="pname" value="${dto.pname}"> <input
-					type="hidden" name="pprice" value="${dto.getPprice()}">
+				<input type="hidden" name="pname" value="${dto.pname}">
+				<input type="hidden" name="pprice" value="${dto.getPprice()}">
 				<%--    <input type="hidden" name="odsize"> 셀렉트에서--%>
-				<%--    <input type="hidden" name="odqty" > 셀렉트에서--%>
+<!-- 				   <input type="hidden" name="odqty" > -->
 
-				<button type="submit" class="btn" value="cart">ADD TO CART</button>
-				<button type="submit" class="btn" value="buy">BUY NOW</button>
+				<input type="button" class="btn" value="ADD TO CART" onclick="cartIn()">
+				<input type="button" class="btn" value="BUY NOW" onclick="buyNow()">
 
 			</form>
 		</div>
