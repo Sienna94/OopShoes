@@ -9,6 +9,14 @@
 			SELECT * FROM MEMBER WHERE MID=#{mid} AND MPW=#{mpw}
 		]]>
 	</select>
+	
+	<select id="getAutoLoginUser" parameterType="LoginDTO" resultType="LoginDTO">
+		<![CDATA[
+			SELECT * FROM MEMBER WHERE MID=#{mid}
+		]]>
+	</select>
+	
+	
 	<!-- 회원 등록 -->
 	<insert id="registration" parameterType="LoginDTO">
 		<![CDATA[

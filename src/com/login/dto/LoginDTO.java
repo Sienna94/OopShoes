@@ -84,6 +84,10 @@ public class LoginDTO {
 		this.mid = mid;
 		this.mpw = mpw;
 	}
+	public LoginDTO(String mid) {
+		super();
+		this.mid = mid;
+	}
 	public LoginDTO() {
 		super();
 		// TODO Auto-generated constructor stub

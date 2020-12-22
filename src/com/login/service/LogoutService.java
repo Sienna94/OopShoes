@@ -19,23 +19,17 @@ public class LogoutService implements CommandAction {
 		if (entity != null) {
 			session.removeAttribute("logOK"); // or session.invalidate();
 			session.removeAttribute("logFail"); // 로그인 실패문구 삭제
-			// 로그인 유지 쿠키 삭제
-			// session 초기화
-			session.invalidate();
-
-			// 로그인 관련 쿠키 삭제
-			Cookie[] cookies = request.getCookies();
-			if (cookies != null) {
-				for (Cookie tempCookie : cookies) {
-					if (tempCookie.getName().equals("id")) {
-						tempCookie.setMaxAge(0);
-						tempCookie.setPath("/");
-						response.addCookie(tempCookie);
-						
-						return "index.jsp";
-					}
-				}
-			}
+			//로그인 관련 쿠키 삭제
+		    Cookie[] cookies = request.getCookies();
+		    if(cookies!=null){
+		        for(Cookie tempCookie : cookies){
+		            if(tempCookie.getName().equals("cid")){
+		                tempCookie.setMaxAge(0);
+		                tempCookie.setPath("/");
+		                response.addCookie(tempCookie);
+		            }
+		        }
+		    }
 		}
 		return "index.jsp";
 	}

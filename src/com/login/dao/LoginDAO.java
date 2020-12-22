@@ -33,6 +33,14 @@ public class LoginDAO {
 		
 		return entity;
 	}
+	// 로그인 ------------------------------------------------------------------
+		public LoginDTO getAutoLoginUser(String id) {
+			SqlSession session=factory.openSession();
+			LoginDTO entity=session.selectOne("mybatis.LoginMapper.getAutoLoginUser", id);
+			session.close();
+			
+			return entity;
+		}
 	// 회원가입 -----------------------------------------------------------------
 	public int registration(LoginDTO dto) {
 		SqlSession session=factory.openSession();

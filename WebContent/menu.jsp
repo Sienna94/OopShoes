@@ -1,3 +1,4 @@
+<%@page import="com.login.dao.LoginDAO"%>
 <%@page import="com.login.dto.LoginDTO"%> 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -17,6 +18,20 @@
 	<link rel="stylesheet" href="/oop/css/payCss.css" type="text/css">
   </head>
   <body>
+  	<%
+    Cookie[] cookies = request.getCookies();
+    if(cookies !=null){
+        for(Cookie tempCookie : cookies){
+            if(tempCookie.getName().equals("cid")){
+                //쿠키값으로 대신 로그인 처리함
+                String id=tempCookie.getValue();
+                LoginDAO dao=new LoginDAO();
+                LoginDTO entity= dao.getAutoLoginUser(id);
+                session.setAttribute("logOK", entity);
+            }
+        }
+    }  	
+  	%>
     <!-- wrap -->
     <div id="wrap">
       <!-- header -->
