@@ -4,17 +4,17 @@
 
 <style>
 /* 푸터 */
-.footer {
+/* .footer {
 	margin-top: 100px;
 	text-align: center;
-	padding: 10px 0;
-	/*    background-color: #ffffff; */
-	width: 100%;
-}
+	padding: 10px 0; */
+/*    background-color: #ffffff; */
+/* width: 100%; 
+}*/
 
-.footer dl {
+/*.footer dl {
 	display: inline-block;
-	/*    background-color: #ffb74d; */
+	background-color: #ffb74d;
 	margin-right: 10px;
 }
 
@@ -37,7 +37,7 @@
 	width: 1px;
 	height: 12px;
 	/*    background-color: #ffffff; */
-	position: absolute;
+/*position: absolute;
 	left: 0;
 	top: 2px;
 }
@@ -49,36 +49,61 @@
 .footer address {
 	padding-top: 25px;
 	text-align: center;
-	font-size: 11px;
-}
+	font-size: 9px;
+} */
 </style>
-<!-- <footer>
-<img src="/oop/img/Oopshoes.png" style="width: 108px; height: 31px;"><br>
-02-3446-4138<br>
-평일 : 11:00 ~ 17:00<br>
-점심 : 12:00 ~ 13:00<br>
-토,일,공휴일 휴무<br>
 
-RETURN ADDRESS<br>
-CJ 대한통운 이용시 : 서울 동대문구 답십리동 CJ택배 답십리중앙대리점<br>
-타택배(편의점CJ포함) 이용시 : 서울 중랑구 봉화산로 243 4층(신내동)<br>
-
-BANK INFO<br>
-우리 1005-603-770542<br>
-예금주 : 이택기(디플리티클로싱)<br>
-COMPANY : 디플리티클로싱<br>
-CEO : 이택기<br>
-ADDRESS : 서울특별시 중랑구 봉화산로 243 (신내동) 4층<br>
-BUSINESS LICENSE : 211-08-11928 [ CHECK IT ]<br>
-PERMIT NUMBER : 2015-서울중랑-0696호<br>
-CPO : 이택기 dipliti@naver.com<br>
-
-PG ESCROW : KCP<br>
-HOSTING : CAFE24 CORP.<br>
-</footer> -->
-
+<!-- footer -->
+<footer>
+	<div class="footer_wrap">
+		<div class="footer_logo">
+			<a href="/oop/contentList.do">
+			<img src="/oop/img/Oopshoes.png" alt="logo_img">
+			</a>
+		</div>
+		<div class="footer_info">
+			<p>
+				<strong>contact</strong><br>
+				02-3446-4138<br>
+				평일 : 11:00 ~ 17:00<br>
+				점심 : 12:00 ~ 13:00<br>
+				토,일,공휴일 휴무
+			</p>
+			<p>
+				<strong>RETURN ADDRESS</strong><br>
+				CJ 대한통운 이용시 : 서울 동대문구 답십리동<br> CJ택배 답십리중앙대리점<br>
+				타택배(편의점CJ포함) 이용시 : 서울 중랑구 봉화산로 243 4층(신내동)<br>
+			</p>
+			<p>
+				<strong>BANK INFO</strong><br>
+				우리 1005-603-770542<br>
+				예금주 : 이택기(디플리티클로싱)<br>
+				COMPANY : 디플리티클로싱<br>
+				CEO : 이택기<br>
+			</p>
+			<p>
+				ADDRESS : 서울특별시 중랑구 봉화산로 243 (신내동) 4층<br>
+				BUSINESS LICENSE : 211-08-11928 [ CHECK IT ]<br>
+				PERMIT NUMBER : 2015-서울중랑-0696호<br>
+				CPO : 이택기 dipliti@naver.com
+			</p>
+			<!-- PG ESCROW : KCP<br>
+			HOSTING : CAFE24 CORP.<br> -->
+		</div>
+	</div>
+	<!-- end footer_wrap -->
+</footer>
+<!--    <address>
+	Copyright © <a href="http://ooshoes.co.kr"><strong>OOSHOES</strong></a>All
+	Rights Reserved.
+   </address>  -->
+</div>
+<!-- end wrap -->
+</body>
+<!-- end body -->
+</html>
 <!-- 푸터 -->
-<div class="footer">
+<!-- <div class="footer">
 	<dl>
 		<dt style="padding-left: 10px">
 			<a href="/oop/contentList.do"> <img src="/oop/img/Oopshoes.png"
@@ -129,11 +154,35 @@ HOSTING : CAFE24 CORP.<br>
 				</li>
 			</ul>
 		</dd>
-	</dl>
+	</dl> -->
 
-	<!-- address -->
-	<address>
+<!-- address -->
+<!-- <address>
 		Copyright © <a href="http://ooshoes.co.kr"><strong>OOSHOES</strong></a>All
 		Rights Reserved.
-	</address>
-</div>
+	</address> 
+</div>-->
+<!-- <footer>
+<img src="/oop/img/Oopshoes.png" style="width: 108px; height: 31px;"><br>
+02-3446-4138<br>
+평일 : 11:00 ~ 17:00<br>
+점심 : 12:00 ~ 13:00<br>
+토,일,공휴일 휴무<br>
+
+RETURN ADDRESS<br>
+CJ 대한통운 이용시 : 서울 동대문구 답십리동 CJ택배 답십리중앙대리점<br>
+타택배(편의점CJ포함) 이용시 : 서울 중랑구 봉화산로 243 4층(신내동)<br>
+
+BANK INFO<br>
+우리 1005-603-770542<br>
+예금주 : 이택기(디플리티클로싱)<br>
+COMPANY : 디플리티클로싱<br>
+CEO : 이택기<br>
+ADDRESS : 서울특별시 중랑구 봉화산로 243 (신내동) 4층<br>
+BUSINESS LICENSE : 211-08-11928 [ CHECK IT ]<br>
+PERMIT NUMBER : 2015-서울중랑-0696호<br>
+CPO : 이택기 dipliti@naver.com<br>
+
+PG ESCROW : KCP<br>
+HOSTING : CAFE24 CORP.<br>
+</footer> -->
