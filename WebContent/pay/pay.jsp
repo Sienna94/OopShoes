@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <c:import url="../menu.jsp" />
 
-<form name="orderform" id="orderform" method="post" class="orderform" action="/oop/payInput.do">
+<form action="/oop/pay/payment.jsp" method="post">
 	<div class="order-checkout">
 		<div class ="order-wrap">
 			<div class ="contents-title">
@@ -24,7 +24,7 @@
 					<div class="cart-order-list">
 						<div class="order-list">
 							<!-- 상품 이미지 -->
-							<div class="image-wrap"><img id="pimage" src="${ob.getPimage1()}"></div>
+							<div class="image-wrap"><img id="pimage" src="/oop/img/shoes/${ob.getPimage1()}"></div>
 							<!-- 상품 디테일 -->
 							<div class="info-wrap">
 								<div class ="pName">
@@ -41,7 +41,7 @@
 								<div class="retail-price">
 								<input type ="hidden" name="pid" value="${ob.getPid()}">
 									<span style="background-color: rgb(255, 255, 255); font-size: large;">
-									<fmt:formatNumber type="number" maxFractionDigits="3" value="${ob.getPprice()}" />원</span>
+                     				<fmt:formatNumber type="number" maxFractionDigits="3" value="${ob.getOdqty()*ob.getPprice()}"/>원</span>
 								</div>
 							</div>
 						</div>
@@ -59,7 +59,7 @@
 								<c:if test="${!empty list}">
 								<c:set var ="sum" value="0"/>
 								<c:forEach var="ob" items="${list}">
-								<c:set var="sum" value="${sum+ob.pprice}"/>
+								<c:set var="sum" value="${sum+ob.pprice*ob.odqty}"/>
 								</c:forEach>
 										<strong>
 										<fmt:formatNumber type="number" maxFractionDigits="3" value="${sum}" />원
@@ -123,12 +123,12 @@
 					<div class="customer-body">
 						<div class="name-con">
 							<span class ="name-tit">이름</span>
-							<input class="input_info" type="text" value="이름">
+							<input name="name" class="input_info" type="text" value="이름">
 							
 						</div>
 						<div class="name-con">
 							<span class ="phone-tit">연락처</span>
-							<input class="input_info" type="text" data-parsley-required="" data-parsley-minlength="8" data-parsley-maxlength="12" data-parsley-pattern="^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$" data-parsley-type="digits" data-parsley-minlength-message="입력값이 너무 짧습니다." data-parsley-type-message="숫자만 입력 가능합니다." data-parsley-pattern-message="올바른 휴대폰 번호를 입력해주세요." data-parsley-required-message="필수 입력 항목입니다." data-parsley-maxlength-message="입력값이 너무 깁니다." id="phoneNumber" name="phoneNumber" value="-없이 입력">
+							<input name="phone" class="input_info" type="text" data-parsley-required="" data-parsley-minlength="8" data-parsley-maxlength="12" data-parsley-pattern="^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$" data-parsley-type="digits" data-parsley-minlength-message="입력값이 너무 짧습니다." data-parsley-type-message="숫자만 입력 가능합니다." data-parsley-pattern-message="올바른 휴대폰 번호를 입력해주세요." data-parsley-required-message="필수 입력 항목입니다." data-parsley-maxlength-message="입력값이 너무 깁니다." id="phoneNumber" name="phoneNumber" value="-없이 입력">
 						</div>
 					</div>
 				</div>
@@ -224,8 +224,8 @@
 					<div class="payment-title">결제수단 선택</div>
 						<select class="sel_pay" name="opayment" data-parsley-required="" data-parsley-required-message="필수 선택 항목입니다.">
 	                                <option value="3">카카오페이</option>
-	                                <option value="2">신용카드</option>
-	                                <option value="1">실시간계좌이체</option>     
+	                                <option value="2">신용카드 : 추후 업데이트 예정</option>
+	                                <option value="1">실시간계좌이체 : 추후 업데이트 예정</option>     
 	                    </select>
 	                    
 	                    

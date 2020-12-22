@@ -1,27 +1,66 @@
+<%@page import="com.pay.dto.PayDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-/*     String name = (String)request.getAttribute("name");
-    String email = (String)request.getAttribute("email");
-    String phone = (String)request.getAttribute("phone");
-    String address = (String)request.getAttribute("address");
-    int totalPrice = (int)request.getAttribute("totalPrice"); 
-     */
-    String name = "장사쿠";
-    String email = "jsj947@naver.com";
-    String phone ="01091693217";
-    String address = "달나라동 별나라 아파트";
-    int totalPrice = 123000; 
-%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+<c:import url="../menu.jsp" />
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-</head>
-<body>
+<form name="orderform" id="orderform" method="post" class="orderform" action="/oop/payInput.do">
+<!-- 파라메터 보낼 내역 -->
+<%	
+	request.setCharacterEncoding("UTF-8");
+	/* pay 넘길 내역 */
+	String mid = request.getParameter("mid");
+	String oname = request.getParameter("oname");
+	String ophone = request.getParameter("ophone");
+	String oaddress = request.getParameter("address") + " " 
+						+ request.getParameter("addressDetail") + " "
+							+ request.getParameter("addressExtra");
+	String opost = request.getParameter("opost");
+	int oamount = Integer.parseInt(request.getParameter("oamount"));
+	int opayment = Integer.parseInt(request.getParameter("opayment"));
+	int odelivery = Integer.parseInt(request.getParameter("odelivery"));
+	int pid = Integer.parseInt(request.getParameter("pid"));
+	int odsize = Integer.parseInt(request.getParameter("odsize"));
+	int odqty = Integer.parseInt(request.getParameter("odqty"));	
+	
+	System.out.println("mid :" +mid);
+	System.out.println("oname :" +oname);
+	System.out.println("ophone :" +ophone);
+	System.out.println("oaddress :" +oaddress);
+	System.out.println("opost :" +opost);
+	System.out.println("oamount :" +oamount);
+	System.out.println("opayment :" +opayment);
+	System.out.println("odelivery :" +odelivery);
+	System.out.println("odsize :" +odsize);
+	System.out.println("odqty :" +odqty);	
+%>
+<input type ="text" name="mid" value="<%=mid%>">
+<input type ="text" name="oname" value="<%=oname%>">
+<input type ="hidden" name="ophone" value="<%=ophone%>">
+<input type ="hidden" name="oaddress" value="<%=oaddress%>">
+<input type ="hidden" name="opost" value="<%=opost%>">
+<input type ="hidden" name="oamount" value="<%=oamount%>">
+<input type ="hidden" name="opayment" value="<%=opayment%>">
+<input type ="hidden" name="odelivery" value="<%=odelivery%>">
+<input type ="hidden" name="pid" value="<%=pid%>">
+<input type ="hidden" name="odsize" value="<%=odsize%>">
+<input type ="hidden" name="odqty" value="<%=odqty%>">
+
+<%	/* 카카오 들어갈 내역 */
+	String name = request.getParameter("name");
+//   String email = (String)request.getAttribute("email");
+    String phone = request.getParameter("phone");
+    String address = oaddress;
+    int totalPrice = oamount; 
+    
+    System.out.println(name+phone+address+totalPrice);
+%>
+
+
     <script>
     $(function(){
         var IMP = window.IMP; // 생략가능
@@ -34,7 +73,7 @@
             merchant_uid : 'merchant_' + new Date().getTime(),
             name : 'Oopshoes',
             amount : <%=totalPrice%>,
-            buyer_email : '<%=email%>',
+         <%--    buyer_email : '<%=email%>', --%>
             buyer_name : '<%=name%>',
             buyer_tel : '<%=phone%>',
             buyer_addr : '<%=address%>',
@@ -67,12 +106,15 @@
                     }
                 });
                 //성공시 이동할 페이지
-                location.href='<%=request.getContextPath()%>/order/paySuccess?msg='+msg;
+	                frm = document.orderform;
+					frm.action = "/oop/payInput.do";
+					frm.submit();
+<%--         			location.href='<%=request.getContextPath()%>/pay/payInsertResult.jsp?msg='+msg; --%>
             } else {
                 msg = '결제에 실패하였습니다.';
                 msg += '에러내용 : ' + rsp.error_msg;
                 //실패시 이동할 페이지
-                location.href="<%=request.getContextPath()%>/order/payFail";
+                location.href="/oop/cartList.do?mid=${logOK.getMid()}";
                 alert(msg);
             }
         });
@@ -80,5 +122,5 @@
     });
     </script>
  
-</body>
-</html>
+</form>
+<c:import url="../footer.jsp" />
