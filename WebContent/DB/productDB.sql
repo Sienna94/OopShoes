@@ -44,4 +44,4 @@ VALUES (6, '에어2', '휠라', 75000, 23, 'image1.jpg', 'image2.jpg', 'image3.j
 
 
 
-
+select * from PRODUCT ORDER BY pDETAIL DESC

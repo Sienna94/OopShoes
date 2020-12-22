@@ -16,6 +16,7 @@ public class ProductUpdateService implements CommandAction{
 		
 		int id = Integer.parseInt(request.getParameter("id").trim());
 		String name = request.getParameter("name").trim();
+		String brand = request.getParameter("brand").trim();
 		int price = Integer.parseInt(request.getParameter("price").trim());
 		int discount = Integer.parseInt(request.getParameter("discount").trim());
 		int stock = Integer.parseInt(request.getParameter("stock").trim());
@@ -28,6 +29,7 @@ public class ProductUpdateService implements CommandAction{
 		ProductDTO dto = new ProductDTO();
 		dto.setPid(id);
 		dto.setPname(name);
+		dto.setPbrand(brand);
 		dto.setPprice(price);
 		dto.setPdiscount(discount);
 		dto.setPstock(stock);
