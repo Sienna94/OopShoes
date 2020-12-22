@@ -18,6 +18,7 @@ public class LoginService implements CommandAction{
 		
 		String id=request.getParameter("id");
 		String pass=request.getParameter("pass");
+		
 		// 자동로그인 변수
 		String loginChk=request.getParameter("autologin");
 		
@@ -25,11 +26,13 @@ public class LoginService implements CommandAction{
 		LoginDTO entity=dao.getLoginUser(id,pass);
 		
 		//회원탈퇴시 로그인불가
-		if(entity.getMdrop() == 1) {
-			entity = null;	
+		if(entity != null) {
+			if(entity.getMdrop() == 1) {
+				entity = null;	
+			}
 		}
 		
-		if (entity !=null) {
+		if (entity != null) {
 			// 세션설정
 			session.setAttribute("logOK", entity);
 			
@@ -43,8 +46,7 @@ public class LoginService implements CommandAction{
 			return "index.jsp";
 		}else {
 			session.setAttribute("logFail","아이디 혹은 패스워드를 잘못 입력되었습니다");
-			
-			return "../login/login.jsp";
+			return "login/login.jsp";
 		}
 	}
 }

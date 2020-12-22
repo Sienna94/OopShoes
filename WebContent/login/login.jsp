@@ -20,6 +20,9 @@
             <!-- 로그인 실패시 문구등장 -->
             <c:if test="${!empty logFail}">
               <p class="warning">${logFail}</p>
+              <%
+              	session.removeAttribute("logFail");
+              %>
             </c:if>
             <!-- 양쪽정렬 성공 -->
             <div class="log_fk">
