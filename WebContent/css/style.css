@@ -236,7 +236,7 @@ section {
 }
 
 .join .input_group input {
-	width: 90%;
+	width: 95%;
 }
 
 #btn_chk {
@@ -270,7 +270,7 @@ section {
 	border: 1px solid #bebebe;
 	padding: 10px;
 	font-size: 13px;
-	width: 95%;
+	width: 99%;
 	height: 200px;
 	margin-left: 10px;
 	text-align: center;
@@ -296,7 +296,7 @@ table {
 	padding: 0px;
 	margin-left: 10px;
 	font-size: 15px;
-	width: 95%;
+	width: 97%;
 	border: 1px solid #444444;
 	border-collapse: collapse;
 }

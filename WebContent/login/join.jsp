@@ -336,7 +336,9 @@
             </div>
             <!-- //get_info -->
           </div>
-            <button id="btn_chk" class="btn_join" >회원 가입</button>
+          <div style="margin: auto; clear: both; width: 95%">
+            <button id="btn_chk" class="btn_join">회원 가입</button>
+          </div>  
       </section>
       <!-- //section -->
       
