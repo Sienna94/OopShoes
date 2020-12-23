@@ -2,7 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <c:import url="../mymenu.jsp"/>
-
+<<style>
+.tbl_head01 tr td {
+	width: 35%;
+}
+</style>
 <h2>제품상세페이지</h2>
 <div class="tbl_head01">
 	<table>
