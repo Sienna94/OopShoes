@@ -337,13 +337,8 @@
             <!-- //get_info -->
           </div>
             <button id="btn_chk" class="btn_join" >회원 가입</button>
-          </form>
-       </div>
       </section>
       <!-- //section -->
+      
       <!-- footer -->
-      <footer>회사 정보 넣을 자리</footer>
-      <!-- //footer -->
-    </div>
-  </body>
-</html>
+      <c:import url="../footer.jsp" />

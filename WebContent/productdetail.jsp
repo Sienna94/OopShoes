@@ -78,24 +78,25 @@
 					<option value="285">285</option>
 					<option value="290">290</option>
 				</select>
-				
-				<!-- 넘겨줄 파라메터값들 -->
-				<input type="hidden" name="mid" value="${logOK.getMid()}"> 
-				<input type="hidden" name="pid" value="${dto.pid}"> 
-				<input type="hidden" name="pimage1" value="${dto.getPimage1()}"> 
-				<input type="hidden" name="pname" value="${dto.pname}">
-				<input type="hidden" name="pprice" value="${dto.getPprice()}">
-				<%--    <input type="hidden" name="odsize"> 셀렉트에서--%>
-				<!-- 				   <input type="hidden" name="odqty" > -->
-			
-				<div class="detail_table">
-					<input type="button" class="btn" value="ADD TO CART" onclick="cartIn()"> 
-					<input type="button" class="btn" value="BUY NOW" onclick="buyNow()">
-				</div>
 			</form>
-			</div>
 		</div>
 	</div>
 
+	<!-- 넘겨줄 파라메터값들 -->
+	<input type="hidden" name="mid" value="${logOK.getMid()}"> <input
+		type="hidden" name="pid" value="${dto.pid}"> <input
+		type="hidden" name="pimage1" value="${dto.getPimage1()}"> <input
+		type="hidden" name="pname" value="${dto.pname}"> <input
+		type="hidden" name="pprice" value="${dto.getPprice()}">
+	<%--    <input type="hidden" name="odsize"> 셀렉트에서--%>
+	<!-- 		<input type="hidden" name="odqty" > -->
+
+	<div class="detail_table">
+		<input type="button" class="btn" value="ADD TO CART"
+			onclick="cartIn()"> <input type="button" class="btn"
+			value="BUY NOW" onclick="buyNow()">
+	</div>
+</div>
 	<%-- end section --%>
 	<c:import url="footer.jsp" />
+	
