@@ -49,7 +49,9 @@
 	<!-- 신상품페이지 -->
 	<select id="getNewList" resultType="ProductDTO" parameterType="java.lang.String">
 		<![CDATA[
-	        SELECT * FROM PRODUCT WHERE ROWNUM <= 12 ORDER BY PRDATE DESC
+	        select tt.*, rownum 
+	        from (SELECT * FROM PRODUCT order by prdate DESC) tt
+	        where rownum<=12
      	]]>
 	</select>
 	<!-- 베스트상품페이지 -->
