@@ -42,6 +42,11 @@ public class CartInputService implements CommandAction {
 		dto.setOdsize(odsize);
 		dto.setOdqty(odqty);
 		
+		//비회원일경우 로그인페이지로
+		if(mid == "") {
+			return "login/login.jsp";
+		}
+		
 		// insert DB
 		CartDAO cartDao = new CartDAO();
 		int n = cartDao.cartInput(dto);
