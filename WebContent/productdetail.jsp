@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -24,7 +25,7 @@
 
 <div class="contents">
 	<div class="product_detail">
-		<h2 style="font-size: 20px; margin-top: 130px; margin-bottom: 20px;">[${dto.pbrand}] ${dto.pname}</h2>
+		<h2 style="font-size: 22px; margin-top: 130px; margin-bottom: 20px;">[${dto.pbrand}] ${dto.pname}</h2>
 
 		<!-- 이미지 영역 -->
 		<div class="detail_img">
@@ -35,11 +36,11 @@
 		
 		<!-- 가격 표시 -->
 		<div class="detail_table">
-			<h3 style="margin-top: 10px; margin-bottom: 10px;">
-				<fmt:formatNumber value="${dto.getPprice()}" pattern="#,### 원" /></h3>
+			<h2 style="margin-top: 10px; margin-bottom: 10px;">
+				<fmt:formatNumber value="${dto.getPprice()}" pattern="#,### 원" /></h2><br>
 				
 			<!-- 상품 상세설명 -->
-			<h6 style="margin-bottom: 10px;">${dto.pdetail}</h6>
+			<h6 style="margin-bottom: 10px; text-align: left;">${dto.pdetail}</h6><br>
 
 			<!-- 상품 수량 및 사이즈 선택란 -->
 			<form name="form1" method="post" action="$/oop/cart/insert.do">
