@@ -12,7 +12,7 @@
 }
 
 /* 초기화 */
-html {overflow-y:scroll;}
+html {overflow-y:scroll;font-family: 'NotoSansKR','Nanum Gothic';font-size: 20px;}
 body {margin:100px;padding:0;background:#fff;color:#000;font-size:0.75em;font-family:dotum;}
 html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0}
 h1, h2, h3, h4, h5, h6 {font-size:1em;font-family:dotum}
@@ -166,7 +166,7 @@ a.btn_cancel {line-height:2.5em;vertical-align:middle}
 
 .btn_list {margin:0 20px 10px} /* 목록용 */
 
-.btn_list01 {width:100%;}
+.btn_list01 {width:100%; margin-top:15px; margin-bottom: 15px;}
 .btn_list01 input, .btn_list01 button, .btn_list01 a {display:inline-block;margin:0;padding:10px;border:0px;background:#3a3b50;color:#fff;text-decoration:none;cursor:pointer;border-radius: 5px;}
 .btn_list01 a:focus {background:#555}
 

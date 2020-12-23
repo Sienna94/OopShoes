@@ -5,6 +5,7 @@
 	/* 	background-color: rgb(127, 140, 255); */
 	background-color: #fff;
 	height: 100%;
+	font-family: 'NotoSansKR','Nanum Gothic';
 }
 
 .product_detail {
@@ -14,6 +15,14 @@
 	/* 	background-color: #4fc3f7; */
 	background-color: #ffffff;
 	width: 100%;
+	padding-top: 25px;
+}
+
+.product_detail h2{
+	font-size: 22px;
+	margin-top: 130px;
+	margin-bottom: 20px;
+	font-family: 'NotoSansKR','Nanum Gothic';
 }
 
 .product_detail>detail_img {
@@ -22,7 +31,7 @@
 
 .detail_table {
 	margin-top: 20px;
-	width: 300px;
+	width: 400px;
 	margin: 0 auto;
 }
 

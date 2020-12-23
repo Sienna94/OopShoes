@@ -63,7 +63,7 @@
 		</div>
 		<div class="footer_info">
 			<p>
-				<strong>contact</strong><br>
+				<strong>CONTACT</strong><br>
 				02-3446-4138<br>
 				평일 : 11:00 ~ 17:00<br>
 				점심 : 12:00 ~ 13:00<br>
@@ -97,7 +97,6 @@
 	Copyright © <a href="http://ooshoes.co.kr"><strong>OOSHOES</strong></a>All
 	Rights Reserved.
    </address>  -->
-</div>
 <!-- end wrap -->
 </body>
 <!-- end body -->

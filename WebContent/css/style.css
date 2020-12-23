@@ -38,6 +38,8 @@ header {
 	display: inline-block;
 	width: 100%;
 	z-index: 999999;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .navi {
@@ -108,12 +110,16 @@ header {
 /* 제품 메뉴링크 ========================================================*/
 .product_menu {
 	line-height: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	/* background-color: #00ff00; */
 }
 
 .product_menu a {
 	margin: 0.5%;
 	font-weight: bolder;
+	font-family: 'NotoSansKR','Nanum Gothic';
+	font-size: 18px;
 }
 
 .product_menu a:hover {
@@ -346,8 +352,8 @@ table th {
 /* index.jsp ================================================================*/
 /* slide ========================================================= */
 article {
-	margin-top: 90px;
-	margin-bottom: 40px;
+	margin-top: 100px;
+	margin-bottom: 30px;
 	text-align: center;
 }
 /* 전체 슬라이드 이미지 */
@@ -367,6 +373,7 @@ article {
 	z-index: -1;
 	width: 100%;
 	height: 100%;
+	margin-top: 50px;
 }
 
 /* 슬라이드 이미지 영역 */
@@ -432,7 +439,6 @@ article {
 	margin: 0 auto;
 	overflow: hidden;
 	width: 780px;
-	margin-top: 60px;
 	/* background-color: #00ff00; */
 }
 
@@ -456,10 +462,11 @@ article {
 footer {
 	overflow: hidden;
 	margin-top: 50px;
+	margin-bottom:20px;
 	bottom: 0;
 	min-width: 1000px;
 	height: 130px;
-	font-size: 8px;
+/* 	font-size: 8px; */
 	text-align:center;
 	/* background-color: #e6e6e6; */
 }
@@ -469,6 +476,7 @@ footer {
 	display: inline-block;
 }
 .footer_logo {
+	width: 108px;
 	margin: 10px;
 	width: 108px;
 	height: 31px;
@@ -481,6 +489,6 @@ footer {
 	display: block;
 	margin: 0 15px 0 15px;
 	float:left;
-	font-size: 8px;
+	font-size: 10px;
 	font-weight: bold;
 }
