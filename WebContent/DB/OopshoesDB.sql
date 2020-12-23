@@ -142,7 +142,8 @@ CREATE TABLE CART(
     pName VARCHAR2(100), --상품이름
     pPRICE NUMBER(10), --상품가격
     odSIZE NUMBER(10), --주문 사이즈   
-   	odQTY NUMBER(3) DEFAULT 0 --판매수량
+   	odQTY NUMBER(3) DEFAULT 0, --주문수량
+   	pDISCOUNT NUMBER(3) DEFAULT 0 --할인율
 );
 
 create sequence seq_cart nocache nocycle;

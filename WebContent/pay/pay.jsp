@@ -60,6 +60,7 @@
 								<c:set var ="sum" value="0"/>
 								<c:forEach var="ob" items="${list}">
 								<c:set var="sum" value="${sum+ob.pprice*ob.odqty}"/>
+								<c:set var="dis" value="${ob.getPdiscount()}"/>
 								</c:forEach>
 										<strong>
 										<fmt:formatNumber type="number" maxFractionDigits="3" value="${sum}" />원
@@ -86,11 +87,11 @@
 	                    </div>
 						<!-- 상품 할인 금액 -->
 						<div class = "item-price">
-							<div class="label">상품 할인 금액</div>
-							<div class="price sale">
-								<strong>원</strong>
-							</div>
-						</div>
+	                        <div class="label">상품 할인 금액</div>
+	                        <div class="price sale">
+	                           <strong><fmt:formatNumber type="number" maxFractionDigits="3" value="${sum*dis*0.01}" />원</strong>
+	                        </div>
+                     	</div>
 						<!-- 주문 할인 금액 -->
 						<div class = "item-price">
 							<span class="label">상품 할인 금액</span>
@@ -104,9 +105,10 @@
 						<strong class ="label"  id="total-tit">총 결제 예정 금액</strong>
 						<div class ="price-sale-total">
 							<strong>
-							<fmt:formatNumber type="number" maxFractionDigits="3" value="${sum+odel}" />원
-							</strong>
-							<input type ="hidden" name="oamount" value="${sum+odel}">
+	                        <fmt:formatNumber type="number" maxFractionDigits="3" value="${sum-sum*dis*0.01+odel}" />원
+	                        </strong>
+	                        <fmt:parseNumber var="sum2" value="${sum-sum*dis/100+odel}" integerOnly="true" />
+							<input type ="hidden" name="oamount" value="${sum2}">
 						</div>
 					</div>
 					<!-- 안내사항 -->

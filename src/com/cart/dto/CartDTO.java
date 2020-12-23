@@ -9,13 +9,15 @@ public class CartDTO {
 	private int pprice;
 	private int odsize;
 	private int odqty;
+	private int pdiscount;
 	
 	public CartDTO() {
 		super();
 
 	}
 
-	public CartDTO(int cid, String mid, int pid, String pimage1, String pname, int pprice, int odsize, int odqty) {
+	public CartDTO(int cid, String mid, int pid, String pimage1, String pname, int pprice, int odsize, int odqty,
+			int pdiscount) {
 		super();
 		this.cid = cid;
 		this.mid = mid;
@@ -25,6 +27,7 @@ public class CartDTO {
 		this.pprice = pprice;
 		this.odsize = odsize;
 		this.odqty = odqty;
+		this.pdiscount = pdiscount;
 	}
 
 	public int getCid() {
@@ -89,6 +92,14 @@ public class CartDTO {
 
 	public void setOdqty(int odqty) {
 		this.odqty = odqty;
+	}
+
+	public int getPdiscount() {
+		return pdiscount;
+	}
+
+	public void setPdiscount(int pdiscount) {
+		this.pdiscount = pdiscount;
 	}
 	
 }

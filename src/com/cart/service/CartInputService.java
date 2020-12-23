@@ -28,7 +28,7 @@ public class CartInputService implements CommandAction {
 		int pprice = Integer.parseInt(request.getParameter("pprice"));
 		int odsize= Integer.parseInt(request.getParameter("odsize"));
 		int odqty= Integer.parseInt(request.getParameter("odqty"));
-		
+		int pdiscount = Integer.parseInt(request.getParameter("pdiscount"));
 		
 		// 데이터 저장
 		CartDTO dto = new CartDTO();
@@ -40,6 +40,7 @@ public class CartInputService implements CommandAction {
 		dto.setPprice(pprice);
 		dto.setOdsize(odsize);
 		dto.setOdqty(odqty);
+		dto.setPdiscount(pdiscount);
 		
 		//비회원일경우 로그인페이지로
 		if(mid == "") {

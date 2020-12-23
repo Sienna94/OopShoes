@@ -84,9 +84,8 @@
 					type="hidden" name="pid" value="${dto.pid}"> <input
 					type="hidden" name="pimage1" value="${dto.getPimage1()}"> <input
 					type="hidden" name="pname" value="${dto.pname}"> <input
-					type="hidden" name="pprice" value="${dto.getPprice()}">
-				<%--    <input type="hidden" name="odsize"> 셀렉트에서--%>
-				<!-- 		<input type="hidden" name="odqty" > -->
+					type="hidden" name="pprice" value="${dto.getPprice()}"><input 
+					type="hidden" name="pdiscount" value="${dto.getPdiscount()}"> 
 			
 				<div class="detail_table">
 					<input type="button" class="btn" value="ADD TO CART"
