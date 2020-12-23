@@ -99,7 +99,7 @@ table.type03 td {
 	<tr>
 		<th align="center">주문번호</th>
 		<th align="center">주문아이디</th>
-		<th align="center">상품아이디</th>
+		<th align="center">상품이름</th>
 		<th align="center">상품이미지</th>
 		<th align="center">상품사이즈</th>
 		<th align="center">상품구매수량</th>
@@ -109,7 +109,7 @@ table.type03 td {
 			<tr>
 				<td align="center" style="vertical-align:middle;">${ob.getOdid()}</td>
 				<td align="center" style="vertical-align:middle;">${ob.getMid()}</td>
-				<td align="center" style="vertical-align:middle;"><a href="/oop/productDetail.do?pg=${ob.getPid()}">${ob.getPname()}</a></td>
+				<td align="center" style="vertical-align:middle; width:500px"><a href="/oop/productDetail.do?pg=${ob.getPid()}">${ob.getPname()}</a></td>
 				<td align="center" style="vertical-align:middle;"><img src="/oop/img/shoes/${ob.getPimage1()}" width="50" height="50"></td>
 				<td align="center" style="vertical-align:middle;">${ob.getOdsize()}</td>
 				<td align="center" style="vertical-align:middle;">${ob.getOdqty()}</td>
