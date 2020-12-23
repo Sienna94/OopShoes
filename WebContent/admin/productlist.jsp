@@ -10,9 +10,9 @@
 		<select id="searchValue" name="brand">
 		    <option value="전체보기">전체보기</option>
 		    <option value="나이키">나이키</option>
+		    <option value="리복">리복</option>
+		    <option value="반스">반스</option>
 		    <option value="아디다스">아디다스</option>
-		    <option value="휠라">휠라</option>
-		    <option value="뉴발란스">뉴발란스</option>
 		</select>
 		<div class="btn_list01">
 		    <input type="button" value="검색" onclick="submit()">
