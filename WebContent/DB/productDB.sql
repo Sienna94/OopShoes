@@ -30,13 +30,13 @@ VALUES (seq_pid.nextval, '르브론 18', '나이키', 239000, 89, '6209f5da-e0e7
 INSERT INTO PRODUCT(pID, pNAME, pBRAND, pPRICE, pSTOCK, pIMAGE1, pIMAGE2, pIMAGE3, pDETAIL, pRDATE)
 VALUES (seq_pid.nextval, '에어 조던 7 레트로GC', '나이키', 255000, 79, '82167f80-fa7d-41c7-b9a9-611a12f314ec_primary.jpg', '1dc45f41-26a8-42a6-8068-0546a2ab9262_4.jpg', 'bed28f6d-dc12-44b7-af64-e9c05c2d1552_2.jpg', '중국의 특별한 순간을 축하하는 이 에어 조던 7 레트로 버전은 프리미엄 소재를 다양하게 사용했습니다. 발아래 전체적으로 적용된 에어 쿠셔닝은 신었을 때 반응성이 좋은 착화감을 제공합니다.', SYSDATE);
 INSERT INTO PRODUCT(pID, pNAME, pBRAND, pPRICE, pSTOCK, pIMAGE1, pIMAGE2, pIMAGE3, pDETAIL, pRDATE)
-VALUES (seq_pid.nextval, '에어 조던 9 레트로', '나이키', 229000, 69, '815a1bea-33cf-425b-9f9d-5aa98605798e_primary.jpg', 'image2.jpg', 'c83d9f81-e8e8-47d5-9d9f-5308c77cc659_2.jpg', '1985년에 출시된 오리지널의 감성을 이어받은 에어 조던 1 로우는 친숙하면서도 참신한 느낌의 깔끔한 클래식 룩을 선보입니다. 아이코닉한 디자인을 더해 캐주얼 모드로 완성하여, 어디에나 잘 어울리고 스타일을 완성합니다.', SYSDATE);
+VALUES (seq_pid.nextval, '에어 조던 9 레트로', '나이키', 229000, 69, '815a1bea-33cf-425b-9f9d-5aa98605798e_primary.jpg', 'd17e3ee1-a4ad-4f48-8322-7f780a711b89_4.jpg', 'c83d9f81-e8e8-47d5-9d9f-5308c77cc659_2.jpg', '에어 조던 9는 특유의 대담한 실루엣과 전례 없는 출시 타이밍으로 유명세를 얻은 스니커즈입니다. 처음 대중에 선보였던 건 마이클 조던이 한창 성공 가도를 달리던 시기이나, 이 클래식 레트로 버전은 마이클 조던이 코트로 다시 화려하게 컴백한 모습을 지켜보았던 이들의 마음 한구석에 특별히 자리를 잡고 있습니다. 이 에디션은 화이트 컬러에 유니버시티 블루와 블랙 액센트가 돋보이는 디자인으로 출시됩니다.', SYSDATE);
 INSERT INTO PRODUCT(pID, pNAME, pBRAND, pPRICE, pSTOCK, pIMAGE1, pIMAGE2, pIMAGE3, pDETAIL, pRDATE)
 VALUES (seq_pid.nextval, '에어 조던 1 미드', '나이키', 139000, 100, '59ee1395-dc0c-4378-8a02-d6d28a3f4d8b_primary.jpg', '3a1a3402-2e2f-4166-a6f0-0ca115bc5723_4.jpg', '5bb4ce19-0955-4eb3-91b8-eb9f328f12ba_2.jpg', '최초의 AJ1에서 영감을 얻어 탄생한 에어 조던 1 미드는 1985년 이후 눈부시게 발전해온 조던 브랜드의 여정을 OG 팬들에게 소개합니다.', SYSDATE);
 INSERT INTO PRODUCT(pID, pNAME, pBRAND, pPRICE, pSTOCK, pIMAGE1, pIMAGE2, pIMAGE3, pDETAIL, pRDATE)
 VALUES (seq_pid.nextval, '에어 조던 35SH', '나이키', 229000 , 100, '50bf7f1e-7333-45e7-8a3b-7f876e9be084_primary.jpg', '07c9ee6e-4945-419a-ae7d-c0e4b7eb9879_4.jpg', '8be02264-612d-4032-9195-657b5098d2bd_2.jpg', '지금의 여성은 그 어느 때보다 스포츠에서의 내러티브를 바꿀 수 있는 힘이 있습니다. 다양한 종목의 여성 운동선수들은 계속해서 사회 변화, 개혁 및 정의를 옹호하며 다음 세대가 이어받을 청사진을 만들고 있습니다. 플랫폼에 우뚝 서서 조던 브랜드를 표현하는 놀라운 여성들은 다양한 코트나 필드에 선 어린 소녀들에게 영감을 줍니다. 스포츠 안팎에서 여성의 힘을 기리는 에어 조던 XXXV 시스터후드는 게임을 이끌어 나가는 여성 운동선수의 커뮤니티를 상징합니다.', SYSDATE);
 INSERT INTO PRODUCT(pID, pNAME, pBRAND, pPRICE, pSTOCK, pIMAGE1, pIMAGE2, pIMAGE3, pDETAIL, pRDATE)
-VALUES (seq_pid.nextval, '나이키 블레이저 미드 77 빈티지', '나이키', 119000  , 100, '27d641b7-49fa-47f9-a171-41acd135373f_primary.jpg', '819fb01e-e81d-412f-ad95-0568fd3673b9_4.jpg', '6d60661e-5865-4d30-a39d-5181a488dce3_2', '나이키 블레이저 미드 77 빈티지는 빈티지한 중창 마감 처리로 나이키 올드 스쿨 농구화의 느낌을 살렸으며, 마치 수년간 보관해온 듯한 룩을 연출합니다.', SYSDATE);
+VALUES (seq_pid.nextval, '나이키 블레이저 미드 77 빈티지', '나이키', 119000  , 100, '27d641b7-49fa-47f9-a171-41acd135373f_primary.jpg', '819fb01e-e81d-412f-ad95-0568fd3673b9_4.jpg', '6d60661e-5865-4d30-a39d-5181a488dce3_2.jpg', '나이키 블레이저 미드 77 빈티지는 빈티지한 중창 마감 처리로 나이키 올드 스쿨 농구화의 느낌을 살렸으며, 마치 수년간 보관해온 듯한 룩을 연출합니다.', SYSDATE);
 INSERT INTO PRODUCT(pID, pNAME, pBRAND, pPRICE, pSTOCK, pIMAGE1, pIMAGE2, pIMAGE3, pDETAIL, pRDATE)
 VALUES (seq_pid.nextval, '나이키 에어맥스 2X', '나이키', 109000 , 100, '224a0223-d963-41f1-af0b-9a2fc317f2ad_primary.jpg', 'bb271700-0d28-4559-b8d3-1453efe3305c_4.jpg', 'd34eb087-db4c-4719-b77e-0001462178db_2.jpg', '더블 스택 에어 쿠셔닝과 오픈 윈도우 및 미니멀한 갑피가 어우러진 나이키 에어맥스 2X는 스트리트 룩에 산뜻한 통기성을 불어넣어 줍니다. 카라와 설포에 더해진 패딩으로 편안함을 선사하며 무광택과 광택 마감 처리의 조합으로 오래 기억에 남는 뛰어난 표현력으로 DIY 룩을 완성해 줍니다.', SYSDATE);
 INSERT INTO PRODUCT(pID, pNAME, pBRAND, pPRICE, pSTOCK, pIMAGE1, pIMAGE2, pIMAGE3, pDETAIL, pRDATE)
@@ -125,10 +125,6 @@ INSERT INTO PRODUCT(pID, pNAME, pBRAND, pPRICE, pSTOCK, pIMAGE1, pIMAGE2, pIMAGE
 VALUES (seq_pid.nextval, 'Y-3 히코', '아디다스', 399000 , 100, 'FX1752-01-01_320X320.jpg', 'FX1752-02-02_720X720.jpg', 'FX1752-02-05_720X720.jpg', '기존의 인식을 바꾸는 과감한 접근. 클래식 스포츠웨어를 정교하게 재해석한 Y-3 컬렉션을 만나보세요. 깔끔하고 심플한 디자인이 돋보이는 매끈한 슈즈입니다. 높은 굽의 두툼한 플랫폼이 대담하면서도 절제된 룩을 더해줍니다. 가죽 갑피가 부드러운 착용감을 선사합니다.', SYSDATE);
 INSERT INTO PRODUCT(pID, pNAME, pBRAND, pPRICE, pSTOCK, pIMAGE1, pIMAGE2, pIMAGE3, pDETAIL, pRDATE)
 VALUES (seq_pid.nextval, 'Y-3 가이와', '아디다스', 599000 , 100, 'FX0909-01-01_320X320.jpg', 'FX0909-02-02_720X720.jpg', 'FX0909-02-05_720X720.jpg', '기존의 인식을 바꾸는 과감한 접근. 클래식 스포츠웨어를 정교하게 재해석한 Y-3 컬렉션을 만나보세요. 깔끔하고 심플한 디자인이 돋보이는 매끈한 슈즈입니다.', SYSDATE);
-
---INSERT INTO PRODUCT(pID, pNAME, pBRAND, pPRICE, pSTOCK, pIMAGE1, pIMAGE2, pIMAGE3, pDETAIL, pRDATE)
---VALUES (seq_pid.nextval, 'Y-3 유누 슈즈', '아디다스', 379000 , 100, 'FX0791-01-01_320X320.jpg', 'FX0791-02-02_720X720.jpg', 'FX0791-02-05_720X720.jpg', '기존의 인식을 바꾸는 과감한 접근. 클래식 스포츠웨어를 정교하게 재해석한 Y-3 컬렉션을 만나보세요. 깔끔하고 심플한 디자인이 돋보이는 매끈한 슈즈입니다.', SYSDATE);
-
 
 
 
