@@ -65,7 +65,7 @@
           </a>
           <!-- 검색 -->
           <div class="search_all">
-            <form action="productSearch.do" method="post">
+            <form action="/oop/productSearch.do" method="post">
               <input id="search" type="text" name="search" placeholder="검색"/>
               <button type="submit" id="btn_search">
                 <img src="/oop/img/search.png" alt="search" id="search_img" />

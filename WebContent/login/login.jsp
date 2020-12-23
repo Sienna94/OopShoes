@@ -40,7 +40,7 @@
           <!-- //form -->
           <div class="join_line">
             <span>회원이 아니신가요?</span>
-            <a href="../login/join.jsp">회원가입</a>
+            <a href="/oop/login/join.jsp">회원가입</a>
           </div>
           <!-- <div class="search_line">
             <a href="#">비회원 주문 조회</a>
