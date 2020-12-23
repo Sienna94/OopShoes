@@ -1,13 +1,11 @@
 package com.cart.service;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.cart.dao.CartDAO;
 import com.cart.dto.CartDTO;
@@ -23,13 +21,14 @@ public class CartInputService implements CommandAction {
 		System.out.println("CartInputService mid:"+ request.getParameter("mid"));
 		
 //		int cid= 0; //테이블에서 생성
-		String mid = request.getParameter("mid");
+		String mid = request.getParameter("mid");	
 		int pid=Integer.parseInt(request.getParameter("pid"));
 		String pimage1 = request.getParameter("pimage1");
 		String pname = request.getParameter("pname");
 		int pprice = Integer.parseInt(request.getParameter("pprice"));
 		int odsize= Integer.parseInt(request.getParameter("odsize"));
 		int odqty= Integer.parseInt(request.getParameter("odqty"));
+		
 		
 		// 데이터 저장
 		CartDTO dto = new CartDTO();
