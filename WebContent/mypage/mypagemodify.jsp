@@ -64,7 +64,9 @@ table td {
 		      <th>전화번호</th>
 		      <td><input type="text" name="phone" size="50" value="${logOK.getMphone()}"></td>
 		   </tr>
-		   
+		   <tr>
+		   		<td><input type="hidden" name="ad" value="${logOK.getMadmin()}"></td>
+		   </tr>
 		   <tr>
 		      <td colspan="2" align="center">
 		      	<div class="btn_list01">

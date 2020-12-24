@@ -20,6 +20,7 @@ public class MemberModifyService implements CommandAction{
 		String address = request.getParameter("addr").trim();
 		String post = request.getParameter("post").trim();
 		String phone = request.getParameter("phone").trim();
+		int ad = Integer.parseInt(request.getParameter("ad").trim());
 		
 		MemberDTO dto = new MemberDTO();
 		dto.setMid(id);
@@ -28,6 +29,7 @@ public class MemberModifyService implements CommandAction{
 		dto.setMaddress(address);
 		dto.setMpost(post);
 		dto.setMphone(phone);
+		dto.setMadmin(ad);
 		
 		MemberDAO dao = new MemberDAO();
 		int n = dao.memberModify(dto);
