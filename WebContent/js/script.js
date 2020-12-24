@@ -65,7 +65,7 @@ $(function () {
 	});
 
   /*패스워드 중복검사 ====================================================*/
-  var isTrue;
+  var isTrue = 0;
   $("#chk_pass").keyup(function () {
     if ($("#join_pass").val() == $("#chk_pass").val()) {
       $("#warning_chk_pass").text("비밀번호가 일치합니다").css({
