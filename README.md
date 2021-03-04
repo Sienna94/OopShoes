@@ -50,7 +50,7 @@
 - 전체 삭제의 경우는 유저id에 해당하는 row 전체를 delete, 상품 하나를 삭제할 경우는 CART에서 해당 row 하나만 delete합니다.
 
 <br>
-![image-20210304140914482](https://user-images.githubusercontent.com/69448123/109942792-e256ef00-7d17-11eb-9a16-4fb0b7419d88.png)
+![image-20210304140821833](https://user-images.githubusercontent.com/69448123/109942654-bf2c3f80-7d17-11eb-824d-c7dffa1500af.png)
 
 - 주문정보 작성시의 배송지 정보는 다음 우편번호 API를 사용합니다.
 - 결제 완료 이후에 ORDERS, ORDERS_DETAIL 테이블에 데이터가 추가되고, 해당 유저의 CART가 Delete 됩니다.
