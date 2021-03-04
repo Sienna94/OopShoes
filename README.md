@@ -49,7 +49,7 @@
 
 <br>
 
-![image-20210304140914482](https://drive.google.com/file/d/1BttgctJotg4pUz_SOfpI6Hmm7k10nF5a/view)
+![image-20210304140914482](https://drive.google.com/file/d/1BttgctJotg4pUz_SOfpI6Hmm7k10nF5a)
 
 
 
