@@ -46,7 +46,7 @@
 
 ### 4.1. 전체 흐름 UI
 
-<img src='http://drive.google.com/uc?export=view&id=1Pud360Tn6N5-0uZdpg5lsezt_dsU6qyb' />
+![image-20210304134321213](https://user-images.githubusercontent.com/69448123/109942595-b0de2380-7d17-11eb-878e-8f160dfc11d9.png)
 
 - 사용자가 ADD TO CART를 누르면 해당 유저 id의 CART 테이블에 저장됩니다
 - 전체 삭제의 경우는 유저id에 해당하는 row 전체를 delete, 상품 하나를 삭제할 경우는 CART에서 해당 row 하나만 delete합니다.
