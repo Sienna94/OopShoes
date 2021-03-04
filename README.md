@@ -35,6 +35,8 @@
 
 ![image-20210304134321213](C:\Users\jsj94\AppData\Roaming\Typora\typora-user-images\image-20210304134321213.png)
 
+<img src='http://drive.google.com/uc?export=view&id=1_cYbeDypntLJSip2a8Y1kXnZ9ff8vJ2q' /><br>
+
 
 
 ## 4. 핵심 기능
