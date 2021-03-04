@@ -33,9 +33,7 @@
 
 
 ## 3. ERD 설계
-
 <img src='http://drive.google.com/uc?export=view&id=1_cYbeDypntLJSip2a8Y1kXnZ9ff8vJ2q' /><br>
-
 
 
 ## 4. 핵심 기능
