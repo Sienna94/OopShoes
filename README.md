@@ -33,7 +33,7 @@
 
 
 ## 3. ERD 설계
-<img src='http://drive.google.com/uc?export=view&id=1_cYbeDypntLJSip2a8Y1kXnZ9ff8vJ2q' /><br>
+![image-20210304134321213](https://user-images.githubusercontent.com/69448123/109942595-b0de2380-7d17-11eb-878e-8f160dfc11d9.png)
 
 
 ## 4. 핵심 기능
@@ -45,15 +45,12 @@
 
 
 ### 4.1. 전체 흐름 UI
-
-![image-20210304134321213](https://user-images.githubusercontent.com/69448123/109942595-b0de2380-7d17-11eb-878e-8f160dfc11d9.png)
-
+![image-20210304140821833](https://user-images.githubusercontent.com/69448123/109942767-db2fe100-7d17-11eb-9740-336a94636291.png)
 - 사용자가 ADD TO CART를 누르면 해당 유저 id의 CART 테이블에 저장됩니다
 - 전체 삭제의 경우는 유저id에 해당하는 row 전체를 delete, 상품 하나를 삭제할 경우는 CART에서 해당 row 하나만 delete합니다.
 
 <br>
-
-<img src='http://drive.google.com/uc?export=view&id=1BttgctJotg4pUz_SOfpI6Hmm7k10nF5a' /><br>
+![image-20210304140914482](https://user-images.githubusercontent.com/69448123/109942792-e256ef00-7d17-11eb-9a16-4fb0b7419d88.png)
 
 - 주문정보 작성시의 배송지 정보는 다음 우편번호 API를 사용합니다.
 - 결제 완료 이후에 ORDERS, ORDERS_DETAIL 테이블에 데이터가 추가되고, 해당 유저의 CART가 Delete 됩니다.
